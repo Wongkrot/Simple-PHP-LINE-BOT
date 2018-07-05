@@ -37,7 +37,7 @@ class Linebot {
 		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body)); 
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
 		'Content-Type: application/json; charser=UTF-8', 
-		'Authorization: Bearer '.$this->channelAccessToken)); 
+		'Authorization: Bearer '.$this->$channelAccessToken)); 
 		$result = curl_exec($ch); 
 		curl_close($ch); 
 		return $result;
@@ -154,7 +154,7 @@ class Linebot {
 	}
 	
 	public function getProfile(){
-		$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($channelAccessToken);
+		/* $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($channelAccessToken);
 		$bt = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 		$response = $bt->getProfile($gbUser);
 		if ($response->isSucceeded()) {
@@ -164,10 +164,21 @@ class Linebot {
 		    //echo $profile['statusMessage'];
 		} else {
 		    $displayName = "Tester";
-		}
+		}*/
 		
-						
-		return $displayName;
+		
+		
+		$ch = curl_init("https://api.line.me/v2/bot/profile/".$gbUser); 
+		curl_setopt($ch, CURLOPT_POST, true); 
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET'); 
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
+		'Content-Type: application/json; charser=UTF-8', 
+		'Authorization: Bearer '.$this->$channelAccessToken)); 
+		$result = curl_exec($ch); 
+		curl_close($ch); 
+					
+		return $result;
 	}
 	
 }
