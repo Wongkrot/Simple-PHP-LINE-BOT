@@ -3,7 +3,7 @@ require_once __DIR__ . '/lineBot.php';
 
 $bot = new Linebot();
 $msg = $bot->getMessageText();
-// $userid = $bot->getUserId();
+$userid = $bot->getUserId();
 $name = $bot->getProfile($userid);
 
 //$text2 = "Tester";
