@@ -149,10 +149,8 @@ class Linebot {
 		return $userId;
 	}
 	
-	public function getProfile(){				
-		$userId = getUserId();
-
-		$url = 'https://api.line.me/v2/bot/profile/'.$userId;
+	public function getProfile($usr){				
+		$url = 'https://api.line.me/v2/bot/profile/'.$usr;
 
 		$headers = array('Authorization: Bearer ' . $this->channelAccessToken);
 
@@ -163,7 +161,7 @@ class Linebot {
 		$result = curl_exec($ch);
 		curl_close($ch);
 
-		return $userId;
+		return $usr;
 		//return $result['displayName'];		
 	}
 }
