@@ -6,12 +6,12 @@ $msg = $bot->getMessageText();
 $userid = $bot->getUserId();
 $profile = $bot->getProfile($userid);
 
-list($usr, $displayName, $pic, $status) = split("," , $profile);
-list($disp, $name) = split("," , $displayName);
+//list($usr, $displayName, $pic, $status) = split("," , $profile);
+//list($disp, $name) = split("," , $displayName);
 
-$bot->reply($name." --> ".$msg);
-//$name = $profile[displayName];
 //$bot->reply($name." --> ".$msg);
+//$name = $profile;
+$bot->reply($profile." --> ".$msg);
 
 //echo $name;
 
