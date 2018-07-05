@@ -166,7 +166,7 @@ class Linebot {
 		    $displayName = "Tester";
 		}*/
 		
-		$curl = curl_init();
+		/*$curl = curl_init();
 
 		curl_setopt_array($curl, array(
 			  CURLOPT_URL => "https://api.line.me/v2/bot/profile/".$gbUser,
@@ -192,7 +192,7 @@ class Linebot {
 		} else {
 		  echo $response;
 		}
-		
+		*/
 		//$ch = curl_init("https://api.line.me/v2/bot/profile/".$gbUser); 
 		//curl_setopt($ch, CURLOPT_GET, true); 
 		//curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET'); 
