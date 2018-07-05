@@ -151,9 +151,11 @@ class Linebot {
 	}
 	
 	public function getProfile(){
-		$api = $this->apiProfile;
-	
-		$res = $api->getProfile('user-id');
+		$webhook = $this->webhookEventObject;
+		$userId = $webhook->{"events"}[0]->{"source"}->{"userId"};
+		
+		$api = $this->apiProfile;	
+		$res = $api->getProfile($userId);
 		if ($res->isSucceeded()) {
     			$profile = $res->getJSONDecodedBody();
     			$displayName = $profile['displayName'];
