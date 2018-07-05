@@ -177,8 +177,8 @@ class Linebot {
 		'Authorization: Bearer '.$this->$channelAccessToken)); 
 		$result = curl_exec($ch); 
 		curl_close($ch); 
-					
-		return $result;
+		$displayName = $result['displayName'];	
+		return $displayName;
 	}
 	
 }
