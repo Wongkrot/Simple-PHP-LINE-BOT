@@ -144,8 +144,21 @@ class Linebot {
 	
 	public function getUserId(){
 		$webhook = $this->webhookEventObject;
-		$userId = $webhook->{"events"}[0]->{"source"}->{"userId"}; 
+		$userId = $webhook->{"events"}[0]->{"source"}->{"userId"}; 		
 		return $userId;
+	}
+	
+	public function getProfile(){
+		$webhook = $this->webhookEventObject;
+	
+		$res = $webhook->getProfile('user-id');
+		if ($res->isSucceeded()) {
+    			$profile = $res->getJSONDecodedBody();
+    			$displayName = $profile['displayName'];
+    			$statusMessage = $profile['statusMessage'];
+    			$pictureUrl = $profile['pictureUrl'];
+		}
+		return $displayName;
 	}
 	
 }
