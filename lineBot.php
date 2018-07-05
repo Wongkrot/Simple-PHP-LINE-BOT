@@ -16,6 +16,8 @@ class Linebot {
 	private $apiReply;
 	private $apiPush;
 
+	private $gbUser;
+
 	
 	public function __construct(){
 		$this->channelAccessToken = Setting::getChannelAccessToken();
@@ -146,14 +148,15 @@ class Linebot {
 	
 	public function getUserId(){
 		$webhook = $this->webhookEventObject;
-		$userId = $webhook->{"events"}[0]->{"source"}->{"userId"}; 		
+		$userId = $webhook->{"events"}[0]->{"source"}->{"userId"}; 	
+		$gbUser = $gbUser;
 		return $userId;
 	}
 	
-	public function getProfile($user){
+	public function getProfile(){
 		$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($channelAccessToken);
 		$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '<channel secret>']);
-		$response = $bot->getProfile($user);
+		$response = $bot->getProfile($gbUser);
 		if ($response->isSucceeded()) {
 		    $profile = $response->getJSONDecodedBody();
 		     $displayName = $profile['displayName'];
