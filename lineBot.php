@@ -15,12 +15,14 @@ class Linebot {
 	private $webhookEventObject;
 	private $apiReply;
 	private $apiPush;
+	private $apiProfile; // by Alexpook
 	
 	public function __construct(){
 		$this->channelAccessToken = Setting::getChannelAccessToken();
 		$this->channelSecret = Setting::getChannelSecret();
 		$this->apiReply = Setting::getApiReply();
 		$this->apiPush = Setting::getApiPush();
+		$this->apiProfile = Setting::getApiProfile(); // by Alexpook
 		$this->webhookResponse = file_get_contents('php://input');
 		$this->webhookEventObject = json_decode($this->webhookResponse);
 	}
@@ -149,9 +151,9 @@ class Linebot {
 	}
 	
 	public function getProfile(){
-		$webhook = $this->webhookEventObject;
+		$api = $this->apiProfile;
 	
-		$res = $webhook->getProfile('user-id');
+		$res = $api->getProfile('user-id');
 		if ($res->isSucceeded()) {
     			$profile = $res->getJSONDecodedBody();
     			$displayName = $profile['displayName'];
