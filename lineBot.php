@@ -169,7 +169,7 @@ class Linebot {
 		
 		
 		$ch = curl_init("https://api.line.me/v2/bot/profile/".$gbUser); 
-		curl_setopt($ch, CURLOPT_POST, true); 
+		curl_setopt($ch, CURLOPT_GET, true); 
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET'); 
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 		//curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
