@@ -178,7 +178,6 @@ class Linebot {
 			  CURLOPT_CUSTOMREQUEST => "GET",
 			  CURLOPT_HTTPHEADER => array(
 			    "cache-control: no-cache",
-			    "postman-token: 952ac75b-658f-9170-0470-9038e480e223",
 			    'Authorization: Bearer '.$this->$channelAccessToken
 			  ),
 		));
@@ -206,7 +205,8 @@ class Linebot {
 		//curl_close($ch); 
 		
 		
-		$displayName = $response['displayName'];	
+		//$displayName = $response['displayName'];	
+		$displayName = $gbUser;
 		return $displayName;
 	}
 	
