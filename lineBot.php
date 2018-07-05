@@ -149,12 +149,12 @@ class Linebot {
 	public function getUserId(){
 		$webhook = $this->webhookEventObject;
 		$userId = $webhook->{"events"}[0]->{"source"}->{"userId"}; 	
-		$gbUser = $userId;
+		
 		return $userId;
 	}
 	
 	public function getProfile(){
-		$gbUser = getUserId();
+		
 		/* $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($channelAccessToken);
 		$bt = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 		$response = $bt->getProfile($gbUser);
@@ -207,7 +207,7 @@ class Linebot {
 		
 		
 		//$displayName = $response['displayName'];	
-		$displayName = $gbUser;
+		//$displayName = $gbUser;
 		return $displayName;
 	}
 	
