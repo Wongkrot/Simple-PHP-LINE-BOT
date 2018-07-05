@@ -17,4 +17,8 @@ class Setting {
 		$api = "https://api.line.me/v2/bot/message/push";
 		return $api;
 	}
+	public function getApiProfile(){
+		$api = "https://api.line.me/v2/profile";	
+		return $api;
+	}
 }
