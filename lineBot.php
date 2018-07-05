@@ -166,6 +166,7 @@ class Linebot {
 		$result = curl_exec($ch);
 		curl_close($ch);
 
-		return $result;	
+		//return $result;	
+		return "Tester";
 	}
 }
