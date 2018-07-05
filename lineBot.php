@@ -208,7 +208,7 @@ class Linebot {
 		
 		//$displayName = $response['displayName'];	
 		//$displayName = $gbUser;
-		return $displayName;
+		//return $displayName;
 	}
 	
 }
