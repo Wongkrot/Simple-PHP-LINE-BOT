@@ -149,10 +149,7 @@ class Linebot {
 		return $userId;
 	}
 	
-	public function getProfile(){
-		
-		
-		//$userId = 'Uffa138efe037e6e889d0b0f4a871c005';
+	public function getProfile(){				
 		$userId = getUserId();
 
 		$url = 'https://api.line.me/v2/bot/profile/'.$userId;
@@ -166,9 +163,7 @@ class Linebot {
 		$result = curl_exec($ch);
 		curl_close($ch);
 
-		return "Tester";
-		//return $result['displayName'];
-		
-		
+		return $userId;
+		//return $result['displayName'];		
 	}
 }
