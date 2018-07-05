@@ -7,7 +7,7 @@ $userid = $bot->getUserId();
 $name = $bot->getProfile($userid);
 
 //$bot->reply($name." --> ".$msg);
-$bot->reply($name[1]." --> ".$msg);
+$bot->reply($name->{"displayName"}." --> ".$msg);
 
 //echo $name;
 
