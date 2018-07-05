@@ -151,9 +151,5 @@ class Linebot {
 		return $userId;
 	}
 	
-	public function getProfile(){
-		
-		
-	}
 	
 }
