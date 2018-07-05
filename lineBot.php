@@ -15,14 +15,12 @@ class Linebot {
 	private $webhookEventObject;
 	private $apiReply;
 	private $apiPush;
-
 	
 	public function __construct(){
 		$this->channelAccessToken = Setting::getChannelAccessToken();
 		$this->channelSecret = Setting::getChannelSecret();
 		$this->apiReply = Setting::getApiReply();
 		$this->apiPush = Setting::getApiPush();
-
 		$this->webhookResponse = file_get_contents('php://input');
 		$this->webhookEventObject = json_decode($this->webhookResponse);
 	}
@@ -35,7 +33,7 @@ class Linebot {
 		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body)); 
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
 		'Content-Type: application/json; charser=UTF-8', 
-		'Authorization: Bearer '.$this->$channelAccessToken)); 
+		'Authorization: Bearer '.$this->channelAccessToken)); 
 		$result = curl_exec($ch); 
 		curl_close($ch); 
 		return $result;
@@ -146,10 +144,8 @@ class Linebot {
 	
 	public function getUserId(){
 		$webhook = $this->webhookEventObject;
-		$userId = $webhook->{"events"}[0]->{"source"}->{"userId"}; 	
-		
+		$userId = $webhook->{"events"}[0]->{"source"}->{"userId"}; 
 		return $userId;
 	}
-	
 	
 }
