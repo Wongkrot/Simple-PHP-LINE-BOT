@@ -5,7 +5,7 @@ $bot = new Linebot();
 $msg = $bot->getMessageText();
 $userid = $bot->getUserId();
 $profile = $bot->getProfile($userid);
-$name = $profile['displayName'];
+$name = $profile[displayName];
 $bot->reply($name." --> ".$msg);
 
 //echo $name;
