@@ -154,8 +154,8 @@ class Linebot {
 	}
 	
 	public function getProfile(){
-		$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($channelAccessToken);
-		$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '<channel secret>']);
+		$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('$channelAccessToken');
+		$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '$channelSecret']);
 		$response = $bot->getProfile($gbUser);
 		if ($response->isSucceeded()) {
 		    $profile = $response->getJSONDecodedBody();
