@@ -154,8 +154,8 @@ class Linebot {
 		$webhook = $this->webhookEventObject;
 		$userId = $webhook->{"events"}[0]->{"source"}->{"userId"};
 		
-		$api = $this->apiProfile;	
-		$res = $api->getProfile($userId);
+		$bot = new \LINE\LINEBot(new CurlHTTPClient($channelAccessToken), ['channelSecret' => $channelSecret]);
+		$res = $bot->getProfile($userId);
 		if ($res->isSucceeded()) {
     			$profile = $res->getJSONDecodedBody();
     			$displayName = $profile['displayName'];
