@@ -2,11 +2,13 @@
 require_once __DIR__ . '/lineBot.php';
 
 $bot = new Linebot();
-$text1 = $bot->getMessageText();
-$text2 = $bot->getUserId();
+$msg = $bot->getMessageText();
+$userid = $bot->getUserId();
+$name = $bot->getProfile($userid);
+
 //$text2 = "Tester";
 //$text2 = $bot->getProfile();
-$bot->reply($text2." --> ".$text1);
+$bot->reply($name." --> ".$msg);
 
 
 
