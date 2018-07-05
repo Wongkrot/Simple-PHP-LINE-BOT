@@ -159,7 +159,7 @@ class Linebot {
 		$response = $bt->getProfile($gbUser);
 		if ($response->isSucceeded()) {
 		    $profile = $response->getJSONDecodedBody();
-		     $displayName = $profile['displayName'];
+		    $displayName = $profile['displayName'];
 		    //echo $profile['pictureUrl'];
 		    //echo $profile['statusMessage'];
 		} else {
