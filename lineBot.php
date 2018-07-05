@@ -162,6 +162,8 @@ class Linebot {
 		     $displayName = $profile['displayName'];
 		    //echo $profile['pictureUrl'];
 		    //echo $profile['statusMessage'];
+		} else {
+		    $displayName = "Tester";
 		}
 		return $displayName;
 	}
