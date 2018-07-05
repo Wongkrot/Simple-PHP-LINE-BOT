@@ -149,7 +149,7 @@ class Linebot {
 	public function getUserId(){
 		$webhook = $this->webhookEventObject;
 		$userId = $webhook->{"events"}[0]->{"source"}->{"userId"}; 	
-		$gbUser = $gbUser;
+		$gbUser = $userId;
 		return $userId;
 	}
 	
