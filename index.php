@@ -6,9 +6,8 @@ $msg = $bot->getMessageText();
 $userid = $bot->getUserId();
 $name = $bot->getProfile($userid);
 
-//$text2 = "Tester";
-//$text2 = $bot->getProfile();
-$bot->reply($name." --> ".$msg);
+//$bot->reply($name." --> ".$msg);
+$bot->reply($name['displayName']." --> ".$msg);
 
 //echo $name;
 
