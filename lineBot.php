@@ -150,7 +150,7 @@ class Linebot {
 		return $userId;
 	}
 	
-	public function getProfile(){
+	/* public function getProfile(){
 		$webhook = $this->webhookEventObject;
 		$userId = $webhook->{"events"}[0]->{"source"}->{"userId"};
 		
@@ -163,6 +163,6 @@ class Linebot {
     			$pictureUrl = $profile['pictureUrl'];
 		}
 		return $displayName;
-	}
+	} */
 	
 }
