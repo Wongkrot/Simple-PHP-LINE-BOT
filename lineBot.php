@@ -172,9 +172,10 @@ class Linebot {
 		curl_setopt($ch, CURLOPT_POST, true); 
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET'); 
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
-		'Content-Type: application/json; charser=UTF-8', 
-		'Authorization: Bearer '.$this->$channelAccessToken)); 
+		//curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
+		//'Content-Type: application/json; charser=UTF-8', 
+		//'Authorization: Bearer '.$this->$channelAccessToken)); 
+		curl_setopt($ch, CURLOPT_HTTPHEADER, 'Authorization: Bearer '.$this->$channelAccessToken); 
 		$result = curl_exec($ch); 
 		curl_close($ch); 
 		$displayName = $result['displayName'];	
