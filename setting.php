@@ -18,7 +18,7 @@ class Setting {
 		return $api;
 	}
 	public function getApiProfile(){
-		$api = "https://api.line.me/v2/profile";	
+		$api = "https://api.line.me/v2/bot/profile";	
 		return $api;
 	}
 }
