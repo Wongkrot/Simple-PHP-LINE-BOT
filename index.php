@@ -10,5 +10,7 @@ $name = $bot->getProfile($userid);
 //$text2 = $bot->getProfile();
 $bot->reply($name." --> ".$msg);
 
+echo $name;
+
 
 
