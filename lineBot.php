@@ -166,19 +166,47 @@ class Linebot {
 		    $displayName = "Tester";
 		}*/
 		
+		$curl = curl_init();
+
+		curl_setopt_array($curl, array(
+			  CURLOPT_URL => "https://api.line.me/v2/bot/profile/".$gbUser,
+			  CURLOPT_RETURNTRANSFER => true,
+			  CURLOPT_ENCODING => "",
+			  CURLOPT_MAXREDIRS => 10,
+			  CURLOPT_TIMEOUT => 30,
+			  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			  CURLOPT_CUSTOMREQUEST => "GET",
+			  CURLOPT_HTTPHEADER => array(
+			    "cache-control: no-cache",
+			    "postman-token: 952ac75b-658f-9170-0470-9038e480e223",
+			    'Authorization: Bearer '.$this->$channelAccessToken
+			  ),
+		));
+
+		$response = curl_exec($curl);
+		$err = curl_error($curl);
+
+		curl_close($curl);
+
+		if ($err) {
+		  echo "cURL Error #:" . $err;
+		} else {
+		  echo $response;
+		}
 		
-		
-		$ch = curl_init("https://api.line.me/v2/bot/profile/".$gbUser); 
-		curl_setopt($ch, CURLOPT_GET, true); 
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET'); 
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+		//$ch = curl_init("https://api.line.me/v2/bot/profile/".$gbUser); 
+		//curl_setopt($ch, CURLOPT_GET, true); 
+		//curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET'); 
+		//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 		//curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
 		//'Content-Type: application/json; charser=UTF-8', 
 		//'Authorization: Bearer '.$this->$channelAccessToken)); 
-		curl_setopt($ch, CURLOPT_HTTPHEADER, 'Authorization: Bearer '.$this->$channelAccessToken); 
-		$result = curl_exec($ch); 
-		curl_close($ch); 
-		$displayName = $result['displayName'];	
+		//curl_setopt($ch, CURLOPT_HTTPHEADER, 'Authorization: Bearer '.$this->$channelAccessToken); 
+		//$result = curl_exec($ch); 
+		//curl_close($ch); 
+		
+		
+		$displayName = $response['displayName'];	
 		return $displayName;
 	}
 	
