@@ -154,7 +154,7 @@ class Linebot {
 	}
 	
 	public function getProfile(){
-		$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($channelAccessToken);
+		/* $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($channelAccessToken);
 		$bt = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 		$response = $bt->getProfile($gbUser);
 		if ($response->isSucceeded()) {
@@ -164,7 +164,8 @@ class Linebot {
 		    //echo $profile['statusMessage'];
 		} else {
 		    $displayName = "Tester";
-		}
+		}*/
+		$displayName = "Tester";
 		return $displayName;
 	}
 	
