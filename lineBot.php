@@ -59,7 +59,7 @@ class Linebot {
 		$webhook = $this->webhookEventObject;
 		$replyToken = $webhook->{"events"}[0]->{"replyToken"}; 
 		$body["replyToken"] = $replyToken;
-		$body["messages"][0] = [
+		$body["messages"][0] = array(
 			{
 			  "type": "bubble",
 			  "styles": {
@@ -198,7 +198,7 @@ class Linebot {
 			    ]
 			  }
 			}	
-		]
+		)
 		
 		$result = $this->httpPost($api,$body);
 		return $result;
