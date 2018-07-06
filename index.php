@@ -5,13 +5,15 @@ $bot = new Linebot();
 $msg = $bot->getMessageText();
 $userid = $bot->getUserId();
 $profile = $bot->getProfile($userid);
-$obj = json_decode($profile);
+$obj1 = json_decode($profile);
 
-//$bot->reply($obj->{'displayName'}." --> ".$msg);
-//$bot->replyFlex($userid, $obj->{'displayName'});
+//$bot->reply($obj1->{'displayName'}." --> ".$msg);
 
 $queue = $bot->getQ();
-$bot->reply($queue." --> ".$msg);
+$obj2 = json_decode($queue);
+$bot->reply($obj2->{''queueNumber}." --> ".$msg);
+
+//$bot->replyFlex($userid, $obj1->{'displayName'});
 
 
 
