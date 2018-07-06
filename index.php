@@ -6,12 +6,11 @@ $msg = $bot->getMessageText();
 $userid = $bot->getUserId();
 $profile = $bot->getProfile($userid);
 
-//list($usr, $displayName, $pic, $status) = split("," , $profile);
-//list($disp, $name) = split("," , $displayName);
+$str = file_get_contents('postmasterq.json');
+$json = json_decode($str, true);
 
-//$bot->reply($name." --> ".$msg);
-//$name = $profile;
-$bot->reply($profile." --> ".$msg);
+$bot->reply($json);
+//$bot->reply($profile." --> ".$msg);
 
 //echo $name;
 
