@@ -165,7 +165,7 @@ class Linebot {
 		//return $result['displayName'];		
 	}
 	
-	public function replyFlex($userid){				
+	public function replyFlex($userid, $name){				
 
 																						
 		$api = $this->apiPush;
@@ -230,7 +230,7 @@ class Linebot {
 						  0 => 
 						  array (
 						    'type' => 'text',
-						    'text' => 'ยินดีต้อนรับคุณ Alexpook',
+						    'text' => 'ยินดีต้อนรับคุณ '.$name,
 						    'size' => 'sm',
 						    'weight' => 'bold',
 						    'color' => '#555555',
