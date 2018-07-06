@@ -15,7 +15,7 @@ $json_data = json_decode($json,true);
 $bot->replyflex($json_data);
 //$bot->reply($profile." --> ".$msg);
 
-//echo $name;
+echo $json_data;
 
 
 
