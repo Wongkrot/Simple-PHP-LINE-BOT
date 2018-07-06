@@ -178,7 +178,7 @@ class Linebot {
 		curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/bot/message/push");
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($json_data));
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $json));
 		curl_setopt($ch, CURLOPT_POST, 1);	
 		$result = curl_exec($ch);		
 		curl_close ($ch);
