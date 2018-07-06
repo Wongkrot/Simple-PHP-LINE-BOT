@@ -347,7 +347,7 @@ class Linebot {
 		return $result;
 	}
 	
-	public function getQ($text){
+	public function getQ(){
 		
 		$api = $this->reserveQ;		 
 		$body["branchID"] = "B0002";
