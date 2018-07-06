@@ -167,7 +167,7 @@ class Linebot {
 		//return $result['displayName'];		
 	}
 	
-	public function replyFlex($userid, $name){				
+	public function replyFlex($userid, $name, $qnumber, $esttime, $qbefore){				
 
 																						
 		$api = $this->apiPush;
@@ -211,7 +211,7 @@ class Linebot {
 					      2 => 
 					      array (
 						'type' => 'text',
-						'text' => 'สาขาสกลนคร อำเภอเมือง',
+						'text' => 'สาขาต้นแบบ',
 						'size' => 'xs',
 						'color' => '#aaaaaa',
 						'wrap' => true,
@@ -251,7 +251,7 @@ class Linebot {
 						  2 => 
 						  array (
 						    'type' => 'text',
-						    'text' => 'A001',
+						    'text' => $qnumber,
 						    'size' => 'xxl',
 						    'weight' => 'bold',
 						    'color' => '#555555',
@@ -267,7 +267,7 @@ class Linebot {
 						      0 => 
 						      array (
 							'type' => 'text',
-							'text' => 'จำนวนคิวที่รอ',
+							'text' => 'จำนวนคิวก่อนหน้า',
 							'size' => 'sm',
 							'color' => '#555555',
 							'flex' => 0,
@@ -275,7 +275,7 @@ class Linebot {
 						      1 => 
 						      array (
 							'type' => 'text',
-							'text' => '5',
+							'text' => $qbefore,
 							'size' => 'sm',
 							'color' => '#111111',
 							'align' => 'end',
@@ -299,7 +299,7 @@ class Linebot {
 						      1 => 
 						      array (
 							'type' => 'text',
-							'text' => '10.36 นาที',
+							'text' => $esttime.' นาที',
 							'size' => 'sm',
 							'color' => '#111111',
 							'align' => 'end',
