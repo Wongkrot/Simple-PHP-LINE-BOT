@@ -7,10 +7,14 @@ $userid = $bot->getUserId();
 $profile = $bot->getProfile($userid);
 $obj = json_decode($profile);
 
-//$queue = $bot->getQ();
-
-$bot->replyFlex($userid, $obj->{'displayName'});
 //$bot->reply($obj->{'displayName'}." --> ".$msg);
+//$bot->replyFlex($userid, $obj->{'displayName'});
+
+$queue = $bot->getQ();
+$bot->reply($queue." --> ".$msg);
+
+
+
 
 //echo $json_data;
 
