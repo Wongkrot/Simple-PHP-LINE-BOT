@@ -59,10 +59,146 @@ class Linebot {
 		$webhook = $this->webhookEventObject;
 		$replyToken = $webhook->{"events"}[0]->{"replyToken"}; 
 		$body["replyToken"] = $replyToken;
-		$body["messages"][0] = array(
-			"type" => "flex",
-			"text"=>$text
-		);
+		$body["messages"][0] = [
+			{
+			  "type": "bubble",
+			  "styles": {
+			    "footer": {
+			      "separator": true
+			    }
+			  },
+			  "body": {
+			    "type": "box",
+			    "layout": "vertical",
+			    "contents": [
+			      {
+				"type": "text",
+				"text": "MasterQ",
+				"weight": "bold",
+				"color": "#1DB446",
+				"size": "sm"
+			      },
+			      {
+				"type": "text",
+				"text": "บริษัทไปรษณีย์ไทย",
+				"weight": "bold",
+				"size": "xxl",
+				"margin": "md"
+			      },
+			      {
+				"type": "text",
+				"text": "สาขาสกลนคร อำเภอเมือง",
+				"size": "xs",
+				"color": "#aaaaaa",
+				"wrap": true
+			      },
+			      {
+				"type": "separator",
+				"margin": "xxl"
+			      },
+			      {
+				"type": "box",
+				"layout": "vertical",
+				"margin": "xxl",
+				"spacing": "sm",
+				"contents": [
+				  {
+				    "type": "text",
+				    "text": "ยินดีต้อนรับคุณ Alexpook",
+				    "size": "sm",
+				    "weight": "bold",
+				    "color": "#555555",
+				    "align": "center",
+				    "flex": 0
+				  },
+				  {
+				    "type": "text",
+				    "text": "คิวของคุณคือ",
+				    "size": "sm",
+				    "color": "#555555",
+				    "align": "center",
+				    "flex": 0
+				  },
+				  {
+				    "type": "text",
+				    "text": "A001",
+				    "size": "xxl",
+				    "weight": "bold",
+				    "color": "#555555",
+				    "align": "center",
+				    "flex": 0
+				  },
+				  {
+				    "type": "box",
+				    "layout": "horizontal",
+				    "contents": [
+				      {
+					"type": "text",
+					"text": "จำนวนคิวที่รอ",
+					"size": "sm",
+					"color": "#555555",
+					"flex": 0
+				      },
+				      {
+					"type": "text",
+					"text": "5",
+					"size": "sm",
+					"color": "#111111",
+					"align": "end"
+				      }
+				    ]
+				  },
+				  {
+				    "type": "box",
+				    "layout": "horizontal",
+				    "contents": [
+				      {
+					"type": "text",
+					"text": "เวลาที่รอโดยประมาณ",
+					"size": "sm",
+					"color": "#555555",
+					"flex": 0
+				      },
+				      {
+					"type": "text",
+					"text": "10.36 นาที",
+					"size": "sm",
+					"color": "#111111",
+					"align": "end"
+				      }
+				    ]
+				  }
+				]
+			      },
+			      {
+				"type": "separator",
+				"margin": "xxl"
+			      },
+			      {
+				"type": "box",
+				"layout": "horizontal",
+				"margin": "md",
+				"contents": [
+				  {
+				    "type": "text",
+				    "text": "ขอบคุณที่ใช้บริการ",
+				    "size": "xs",
+				    "color": "#aaaaaa",
+				    "flex": 0
+				  },
+				  {
+				    "type": "text",
+				    "text": "D-Sci Corporation.",
+				    "color": "#aaaaaa",
+				    "size": "xs",
+				    "align": "end"
+				  }
+				]
+			      }
+			    ]
+			  }
+			}	
+		]
 		
 		$result = $this->httpPost($api,$body);
 		return $result;
