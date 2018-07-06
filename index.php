@@ -7,7 +7,7 @@ $userid = $bot->getUserId();
 $profile = $bot->getProfile($userid);
 
 $bot->replyFlex($userid);
-//$bot->reply($profile." --> ".$msg);
+$bot->reply($profile." --> ".$msg);
 
 //echo $json_data;
 
