@@ -167,7 +167,7 @@ class Linebot {
 	
 	public function replyFlex($userid){
 		
-		$json = file_get_contents("postmasterq.json");
+		$json = file_get_contents("/postmasterq.json");
 		$json_data = json_decode($string, true);
 				
 		$body = array(
