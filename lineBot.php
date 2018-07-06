@@ -54,6 +54,20 @@ class Linebot {
 		return $result;
 	}
 	
+	public function replyflex($text){
+		$api = $this->apiReply;
+		$webhook = $this->webhookEventObject;
+		$replyToken = $webhook->{"events"}[0]->{"replyToken"}; 
+		$body["replyToken"] = $replyToken;
+		$body["messages"][0] = array(
+			"type" => "flex",
+			"text"=>$text
+		);
+		
+		$result = $this->httpPost($api,$body);
+		return $result;
+	}
+	
 	public function push($body){
 		$api = $this->apiPush;
 		$result = $this->httpPost($api, $body);
