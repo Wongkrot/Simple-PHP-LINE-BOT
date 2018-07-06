@@ -312,8 +312,8 @@ class Linebot {
 						    'type' => 'text',
 						    'text' => 'Queue Date : '.date("d-m-Y"),
 						    'size' => 'sm',
-						    'weight' => 'bold',
 						    'color' => '#555555',
+						    'align' => 'center',
 						    'flex' => 0,
 						  ),	
 							
