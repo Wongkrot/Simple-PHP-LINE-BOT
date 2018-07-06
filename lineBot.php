@@ -169,13 +169,13 @@ class Linebot {
 		
 		$json = file_get_contents("postmasterq.json");
 		$json_data = json_decode($string, true);
-		
+				
 		$body = array(
           	  'to' => $userid,
           	  'messages' => [
           	      array(
 			    'type' => 'flex',
-			    'contents' => $json_data		    
+			    'contents' => $json		    
 			)
 		    ]
 		);
