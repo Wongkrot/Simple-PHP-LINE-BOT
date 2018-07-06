@@ -291,7 +291,7 @@ class Linebot {
 						      0 => 
 						      array (
 							'type' => 'text',
-							'text' => 'เวลาที่รอโดยประมาณ',
+							'text' => 'เวลารอโดยประมาณ',
 							'size' => 'sm',
 							'color' => '#555555',
 							'flex' => 0,
@@ -306,6 +306,17 @@ class Linebot {
 						      ),
 						    ),
 						  ),
+							
+						  5 => 
+						  array (
+						    'type' => 'text',
+						    'text' => 'Queue Date : '.date("d-m-Y"),
+						    'size' => 'sm',
+						    'weight' => 'bold',
+						    'color' => '#555555',
+						    'flex' => 0,
+						  ),	
+							
 						),
 					      ),
 					      5 => 
