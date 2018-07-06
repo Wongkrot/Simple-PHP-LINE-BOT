@@ -166,144 +166,7 @@ class Linebot {
 	}
 	
 	public function replyFlex($userid){				
-		$data = {
-					  "type": "bubble",
-					  "styles": {
-					    "footer": {
-					      "separator": true
-					    }
-					  },
-					  "body": {
-					    "type": "box",
-					    "layout": "vertical",
-					    "contents": [
-					      {
-						"type": "text",
-						"text": "MasterQ",
-						"weight": "bold",
-						"color": "#1DB446",
-						"size": "sm"
-					      },
-					      {
-						"type": "text",
-						"text": "บริษัทไปรษณีย์ไทย",
-						"weight": "bold",
-						"size": "xxl",
-						"margin": "md"
-					      },
-					      {
-						"type": "text",
-						"text": "สาขาสกลนคร อำเภอเมือง",
-						"size": "xs",
-						"color": "#aaaaaa",
-						"wrap": true
-					      },
-					      {
-						"type": "separator",
-						"margin": "xxl"
-					      },
-					      {
-						"type": "box",
-						"layout": "vertical",
-						"margin": "xxl",
-						"spacing": "sm",
-						"contents": [
-						  {
-						    "type": "text",
-						    "text": "ยินดีต้อนรับคุณ Alexpook",
-						    "size": "sm",
-						    "weight": "bold",
-						    "color": "#555555",
-						    "align": "center",
-						    "flex": 0
-						  },
-						  {
-						    "type": "text",
-						    "text": "คิวของคุณคือ",
-						    "size": "sm",
-						    "color": "#555555",
-						    "align": "center",
-						    "flex": 0
-						  },
-						  {
-						    "type": "text",
-						    "text": "A001",
-						    "size": "xxl",
-						    "weight": "bold",
-						    "color": "#555555",
-						    "align": "center",
-						    "flex": 0
-						  },
-						  {
-						    "type": "box",
-						    "layout": "horizontal",
-						    "contents": [
-						      {
-							"type": "text",
-							"text": "จำนวนคิวที่รอ",
-							"size": "sm",
-							"color": "#555555",
-							"flex": 0
-						      },
-						      {
-							"type": "text",
-							"text": "5",
-							"size": "sm",
-							"color": "#111111",
-							"align": "end"
-						      }
-						    ]
-						  },
-						  {
-						    "type": "box",
-						    "layout": "horizontal",
-						    "contents": [
-						      {
-							"type": "text",
-							"text": "เวลาที่รอโดยประมาณ",
-							"size": "sm",
-							"color": "#555555",
-							"flex": 0
-						      },
-						      {
-							"type": "text",
-							"text": "10.36 นาที",
-							"size": "sm",
-							"color": "#111111",
-							"align": "end"
-						      }
-						    ]
-						  }
-						]
-					      },
-					      {
-						"type": "separator",
-						"margin": "xxl"
-					      },
-					      {
-						"type": "box",
-						"layout": "horizontal",
-						"margin": "md",
-						"contents": [
-						  {
-						    "type": "text",
-						    "text": "ขอบคุณที่ใช้บริการ",
-						    "size": "xs",
-						    "color": "#aaaaaa",
-						    "flex": 0
-						  },
-						  {
-						    "type": "text",
-						    "text": "D-Sci Corporation.",
-						    "color": "#aaaaaa",
-						    "size": "xs",
-						    "align": "end"
-						  }
-						]
-					      }
-					    ]
-					  }
-					};
+
 																						
 		$api = $this->apiPush;
 		//$webhook = $this->webhookEventObject;
@@ -312,7 +175,170 @@ class Linebot {
 		$body["messages"][0] = array(
 			"type" => "flex",
 			"altText" => "this is a flex message",
-			"contents" => JSON.stringify($data)						
+			"contents" => array (
+					  'type' => 'bubble',
+					  'styles' => 
+					  array (
+					    'footer' => 
+					    array (
+					      'separator' => true,
+					    ),
+					  ),
+					  'body' => 
+					  array (
+					    'type' => 'box',
+					    'layout' => 'vertical',
+					    'contents' => 
+					    array (
+					      0 => 
+					      array (
+						'type' => 'text',
+						'text' => 'MasterQ',
+						'weight' => 'bold',
+						'color' => '#1DB446',
+						'size' => 'sm',
+					      ),
+					      1 => 
+					      array (
+						'type' => 'text',
+						'text' => 'บริษัทไปรษณีย์ไทย',
+						'weight' => 'bold',
+						'size' => 'xxl',
+						'margin' => 'md',
+					      ),
+					      2 => 
+					      array (
+						'type' => 'text',
+						'text' => 'สาขาสกลนคร อำเภอเมือง',
+						'size' => 'xs',
+						'color' => '#aaaaaa',
+						'wrap' => true,
+					      ),
+					      3 => 
+					      array (
+						'type' => 'separator',
+						'margin' => 'xxl',
+					      ),
+					      4 => 
+					      array (
+						'type' => 'box',
+						'layout' => 'vertical',
+						'margin' => 'xxl',
+						'spacing' => 'sm',
+						'contents' => 
+						array (
+						  0 => 
+						  array (
+						    'type' => 'text',
+						    'text' => 'ยินดีต้อนรับคุณ Alexpook',
+						    'size' => 'sm',
+						    'weight' => 'bold',
+						    'color' => '#555555',
+						    'align' => 'center',
+						    'flex' => 0,
+						  ),
+						  1 => 
+						  array (
+						    'type' => 'text',
+						    'text' => 'คิวของคุณคือ',
+						    'size' => 'sm',
+						    'color' => '#555555',
+						    'align' => 'center',
+						    'flex' => 0,
+						  ),
+						  2 => 
+						  array (
+						    'type' => 'text',
+						    'text' => 'A001',
+						    'size' => 'xxl',
+						    'weight' => 'bold',
+						    'color' => '#555555',
+						    'align' => 'center',
+						    'flex' => 0,
+						  ),
+						  3 => 
+						  array (
+						    'type' => 'box',
+						    'layout' => 'horizontal',
+						    'contents' => 
+						    array (
+						      0 => 
+						      array (
+							'type' => 'text',
+							'text' => 'จำนวนคิวที่รอ',
+							'size' => 'sm',
+							'color' => '#555555',
+							'flex' => 0,
+						      ),
+						      1 => 
+						      array (
+							'type' => 'text',
+							'text' => '5',
+							'size' => 'sm',
+							'color' => '#111111',
+							'align' => 'end',
+						      ),
+						    ),
+						  ),
+						  4 => 
+						  array (
+						    'type' => 'box',
+						    'layout' => 'horizontal',
+						    'contents' => 
+						    array (
+						      0 => 
+						      array (
+							'type' => 'text',
+							'text' => 'เวลาที่รอโดยประมาณ',
+							'size' => 'sm',
+							'color' => '#555555',
+							'flex' => 0,
+						      ),
+						      1 => 
+						      array (
+							'type' => 'text',
+							'text' => '10.36 นาที',
+							'size' => 'sm',
+							'color' => '#111111',
+							'align' => 'end',
+						      ),
+						    ),
+						  ),
+						),
+					      ),
+					      5 => 
+					      array (
+						'type' => 'separator',
+						'margin' => 'xxl',
+					      ),
+					      6 => 
+					      array (
+						'type' => 'box',
+						'layout' => 'horizontal',
+						'margin' => 'md',
+						'contents' => 
+						array (
+						  0 => 
+						  array (
+						    'type' => 'text',
+						    'text' => 'ขอบคุณที่ใช้บริการ',
+						    'size' => 'xs',
+						    'color' => '#aaaaaa',
+						    'flex' => 0,
+						  ),
+						  1 => 
+						  array (
+						    'type' => 'text',
+						    'text' => 'D-Sci Corporation.',
+						    'color' => '#aaaaaa',
+						    'size' => 'xs',
+						    'align' => 'end',
+						  ),
+						),
+					      ),
+					    ),
+					  ),
+					)						
 		);
 		
 		$result = $this->httpPost($api,$body);
