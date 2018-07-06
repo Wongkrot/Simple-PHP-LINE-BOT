@@ -6,8 +6,11 @@ $msg = $bot->getMessageText();
 $userid = $bot->getUserId();
 $profile = $bot->getProfile($userid);
 
+
+$obj = json_decode($profile);
+
 //$bot->replyFlex($userid);
-$bot->reply($profile." --> ".$msg);
+$bot->reply($obj->{'displayName'}." --> ".$msg);
 
 //echo $json_data;
 
