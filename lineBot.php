@@ -166,15 +166,7 @@ class Linebot {
 	}
 	
 	public function replyFlex($userid){				
-		
-		$api = $this->apiPush;
-		//$webhook = $this->webhookEventObject;
-		//$replyToken = $webhook->{"events"}[0]->{"replyToken"}; 
-		$body["to"] = $userid;
-		$body["messages"][0] = array(
-			"type" => "flex",
-			"altText" => "this is a flex message",
-			"contents" => {
+		$data = {
 					  "type": "bubble",
 					  "styles": {
 					    "footer": {
@@ -311,9 +303,16 @@ class Linebot {
 					      }
 					    ]
 					  }
-					}
-			
-			
+					};
+																						
+		$api = $this->apiPush;
+		//$webhook = $this->webhookEventObject;
+		//$replyToken = $webhook->{"events"}[0]->{"replyToken"}; 
+		$body["to"] = $userid;
+		$body["messages"][0] = array(
+			"type" => "flex",
+			"altText" => "this is a flex message",
+			"contents" => $data						
 		);
 		
 		$result = $this->httpPost($api,$body);
