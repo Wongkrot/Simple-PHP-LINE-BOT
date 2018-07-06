@@ -175,7 +175,7 @@ class Linebot {
           	  'messages' => [
           	      array(
 			    'type' => 'flex',
-			    'contents' => $json		    
+			    'contents' => $json_data		    
 			)
 		    ]
 		);
