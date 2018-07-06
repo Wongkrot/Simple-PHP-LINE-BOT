@@ -15,7 +15,7 @@ class Linebot {
 	private $webhookEventObject;
 	private $apiReply;
 	private $apiPush;
-	private $reserveQ
+	private $reserveQ;
 
 	
 	public function __construct(){
