@@ -178,5 +178,7 @@ class Linebot {
 		curl_setopt($ch, CURLOPT_POST, 1);	
 		$result = curl_exec($ch);		
 		curl_close ($ch);
+		
+		return $result;
 	}
 }
