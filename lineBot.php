@@ -166,19 +166,29 @@ class Linebot {
 	}
 	
 	public function replyFlex($userid){
+		
+		$json = file_get_contents("postmasterq.json");
+		$json_data = json_decode($string, true);
+		
+		$body = array(
+          	  'to' => $userid,
+          	  'messages' => [
+          	      array(
+			    'type' => 'flex',
+			    'contents' => $json_data		    
+			)
+		    ]
+		);
+		
 		$url = 'https://api.line.me/v2/bot/message/push';
 		
-		$headers = array('Authorization: Bearer ' . $this->channelAccessToken);
-		
-		
-		$json = file_get_contents("/postmasterq.json");
-		$json_data = json_decode($string, true);
+		$headers = array('Authorization: Bearer ' . $this->channelAccessToken);				
 		
 		$ch = curl_init($url);			
 		curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/bot/message/push");
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $json));
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body)));
 		curl_setopt($ch, CURLOPT_POST, 1);	
 		$result = curl_exec($ch);		
 		curl_close ($ch);
