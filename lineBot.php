@@ -275,7 +275,7 @@ class Linebot {
 						      1 => 
 						      array (
 							'type' => 'text',
-							'text' => $qbefore,
+							'text' => $qbefore.' คิว',
 							'size' => 'sm',
 							'color' => '#111111',
 							'align' => 'end',
