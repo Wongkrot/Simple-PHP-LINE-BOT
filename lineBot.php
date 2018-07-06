@@ -54,20 +54,6 @@ class Linebot {
 		return $result;
 	}
 	
-	public function replyflex($text){
-		$api = $this->apiReply;
-		$webhook = $this->webhookEventObject;
-		$replyToken = $webhook->{"events"}[0]->{"replyToken"}; 
-		$body["replyToken"] = $replyToken;
-		$body["messages"][0] = array(
-			"type" => "flex",
-			"contents" => $text
-		);
-		
-		$result = $this->httpPost($api,$body);
-		return $result;
-	}
-	
 	public function push($body){
 		$api = $this->apiPush;
 		$result = $this->httpPost($api, $body);
@@ -177,5 +163,25 @@ class Linebot {
 
 		return $result;
 		//return $result['displayName'];		
+	}
+	
+	public function replyflex($userId){
+		$ch = curl_init();
+
+		curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/bot/message/push");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, "{\n  \"to\": \"$userId\",\n  \"messages\": [\n    {\n  \"type\": \"bubble\",\n  \"styles\": {\n    \"footer\": {\n      \"separator\": true\n    }\n  },\n  \"body\": {\n    \"type\": \"box\",\n    \"layout\": \"vertical\",\n    \"contents\": [\n      {\n        \"type\": \"text\",\n        \"text\": \"MasterQ\",\n        \"weight\": \"bold\",\n        \"color\": \"#1DB446\",\n        \"size\": \"sm\"\n      },\n      {\n        \"type\": \"text\",\n        \"text\": \"บริษัทไปรษณีย์ไทย\",\n        \"weight\": \"bold\",\n        \"size\": \"xxl\",\n        \"margin\": \"md\"\n      },\n      {\n        \"type\": \"text\",\n        \"text\": \"สาขาสกลนคร อำเภอเมือง\",\n        \"size\": \"xs\",\n        \"color\": \"#aaaaaa\",\n        \"wrap\": true\n      },\n      {\n        \"type\": \"separator\",\n        \"margin\": \"xxl\"\n      },\n      {\n        \"type\": \"box\",\n        \"layout\": \"vertical\",\n        \"margin\": \"xxl\",\n        \"spacing\": \"sm\",\n        \"contents\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"ยินดีต้อนรับคุณ Alexpook\",\n            \"size\": \"sm\",\n            \"weight\": \"bold\",\n            \"color\": \"#555555\",\n            \"align\": \"center\",\n            \"flex\": 0\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"คิวของคุณคือ\",\n            \"size\": \"sm\",\n            \"color\": \"#555555\",\n            \"align\": \"center\",\n            \"flex\": 0\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"A001\",\n            \"size\": \"xxl\",\n            \"weight\": \"bold\",\n            \"color\": \"#555555\",\n            \"align\": \"center\",\n            \"flex\": 0\n          },\n          {\n            \"type\": \"box\",\n            \"layout\": \"horizontal\",\n            \"contents\": [\n              {\n                \"type\": \"text\",\n                \"text\": \"จำนวนคิวที่รอ\",\n                \"size\": \"sm\",\n                \"color\": \"#555555\",\n                \"flex\": 0\n              },\n              {\n                \"type\": \"text\",\n                \"text\": \"5\",\n                \"size\": \"sm\",\n                \"color\": \"#111111\",\n                \"align\": \"end\"\n              }\n            ]\n          },\n          {\n            \"type\": \"box\",\n            \"layout\": \"horizontal\",\n            \"contents\": [\n              {\n                \"type\": \"text\",\n                \"text\": \"เวลาที่รอโดยประมาณ\",\n                \"size\": \"sm\",\n                \"color\": \"#555555\",\n                \"flex\": 0\n              },\n              {\n                \"type\": \"text\",\n                \"text\": \"10.36 นาที\",\n                \"size\": \"sm\",\n                \"color\": \"#111111\",\n                \"align\": \"end\"\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"type\": \"separator\",\n        \"margin\": \"xxl\"\n      },\n      {\n        \"type\": \"box\",\n        \"layout\": \"horizontal\",\n        \"margin\": \"md\",\n        \"contents\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"ขอบคุณที่ใช้บริการ\",\n            \"size\": \"xs\",\n            \"color\": \"#aaaaaa\",\n            \"flex\": 0\n          },\n          {\n            \"type\": \"text\",\n            \"text\": \"D-Sci Corporation.\",\n            \"color\": \"#aaaaaa\",\n            \"size\": \"xs\",\n            \"align\": \"end\"\n          }\n        ]\n      }\n    ]\n  }\n}\n\n  ]\n}");
+		curl_setopt($ch, CURLOPT_POST, 1);
+
+		$headers = array();
+		$headers[] = "Content-Type: application/json";
+		$headers[] = "Authorization: Bearer {$this->channelAccessToken}";
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+		$result = curl_exec($ch);
+		if (curl_errno($ch)) {
+		    echo 'Error:' . curl_error($ch);
+		}
+		curl_close ($ch);
 	}
 }
