@@ -11,7 +11,7 @@ $obj1 = json_decode($profile);
 
 $queue = $bot->getQ();
 $obj2 = json_decode($queue);
-$bot->reply($obj2->{''queueNumber}." --> ".$msg);
+$bot->reply($obj2->{'queueNumber'}." --> ".$msg);
 
 //$bot->replyFlex($userid, $obj1->{'displayName'});
 
