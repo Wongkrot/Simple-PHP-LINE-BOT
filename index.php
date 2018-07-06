@@ -6,9 +6,13 @@ $msg = $bot->getMessageText();
 $userid = $bot->getUserId();
 $profile = $bot->getProfile($userid);
 
-$json = require('./postmasterq.json'); 
+// Read JSON file
+$json = file_get_contents('./postmasterq.json');
 
-$bot->reply($json);
+//Decode JSON
+$json_data = json_decode($json,true);
+
+$bot->reply($json_data);
 //$bot->reply($profile." --> ".$msg);
 
 //echo $name;
