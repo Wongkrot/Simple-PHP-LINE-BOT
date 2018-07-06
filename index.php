@@ -11,9 +11,12 @@ $obj1 = json_decode($profile);
 
 $queue = $bot->getQ();
 $obj2 = json_decode($queue);
-$bot->reply($obj2->{'queue'}->{'queueNumber'}." --> ".$msg);
+$qnumber = $obj2->{'queue'}->{'queueNumber'};
+$esttime = $obj2->{'queue'}->{'estimateTime'};
+$qbefore = $obj2->{'queue'}->{'queueBefore'};
 
-//$bot->replyFlex($userid, $obj1->{'displayName'});
+
+$bot->replyFlex($userid, $obj1->{'displayName'}, $qnumber, $esttime, $qbefore);
 
 
 
