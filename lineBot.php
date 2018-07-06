@@ -167,7 +167,7 @@ class Linebot {
 	
 	public function replyFlex($userid){				
 		
-		$api = $this->apiReply;
+		$api = $this->apiPush;
 		//$webhook = $this->webhookEventObject;
 		//$replyToken = $webhook->{"events"}[0]->{"replyToken"}; 
 		$body["to"] = $userid;
@@ -175,143 +175,143 @@ class Linebot {
 			"type" => "flex",
 			"altText" => "this is a flex message",
 			"contents" => {
-				  "type": "bubble",
-				  "styles": {
-				    "footer": {
-				      "separator": true
-				    }
-				  },
-				  "body": {
-				    "type": "box",
-				    "layout": "vertical",
-				    "contents": [
-				      {
-					"type": "text",
-					"text": "MasterQ",
-					"weight": "bold",
-					"color": "#1DB446",
-					"size": "sm"
-				      },
-				      {
-					"type": "text",
-					"text": "บริษัทไปรษณีย์ไทย",
-					"weight": "bold",
-					"size": "xxl",
-					"margin": "md"
-				      },
-				      {
-					"type": "text",
-					"text": "สาขาสกลนคร อำเภอเมือง",
-					"size": "xs",
-					"color": "#aaaaaa",
-					"wrap": true
-				      },
-				      {
-					"type": "separator",
-					"margin": "xxl"
-				      },
-				      {
-					"type": "box",
-					"layout": "vertical",
-					"margin": "xxl",
-					"spacing": "sm",
-					"contents": [
-					  {
-					    "type": "text",
-					    "text": "ยินดีต้อนรับคุณ Alexpook",
-					    "size": "sm",
-					    "weight": "bold",
-					    "color": "#555555",
-					    "align": "center",
-					    "flex": 0
+					  "type": "bubble",
+					  "styles": {
+					    "footer": {
+					      "separator": true
+					    }
 					  },
-					  {
-					    "type": "text",
-					    "text": "คิวของคุณคือ",
-					    "size": "sm",
-					    "color": "#555555",
-					    "align": "center",
-					    "flex": 0
-					  },
-					  {
-					    "type": "text",
-					    "text": "A001",
-					    "size": "xxl",
-					    "weight": "bold",
-					    "color": "#555555",
-					    "align": "center",
-					    "flex": 0
-					  },
-					  {
+					  "body": {
 					    "type": "box",
-					    "layout": "horizontal",
+					    "layout": "vertical",
 					    "contents": [
 					      {
 						"type": "text",
-						"text": "จำนวนคิวที่รอ",
-						"size": "sm",
-						"color": "#555555",
-						"flex": 0
+						"text": "MasterQ",
+						"weight": "bold",
+						"color": "#1DB446",
+						"size": "sm"
 					      },
 					      {
 						"type": "text",
-						"text": "5",
-						"size": "sm",
-						"color": "#111111",
-						"align": "end"
-					      }
-					    ]
-					  },
-					  {
-					    "type": "box",
-					    "layout": "horizontal",
-					    "contents": [
-					      {
-						"type": "text",
-						"text": "เวลาที่รอโดยประมาณ",
-						"size": "sm",
-						"color": "#555555",
-						"flex": 0
+						"text": "บริษัทไปรษณีย์ไทย",
+						"weight": "bold",
+						"size": "xxl",
+						"margin": "md"
 					      },
 					      {
 						"type": "text",
-						"text": "10.36 นาที",
-						"size": "sm",
-						"color": "#111111",
-						"align": "end"
+						"text": "สาขาสกลนคร อำเภอเมือง",
+						"size": "xs",
+						"color": "#aaaaaa",
+						"wrap": true
+					      },
+					      {
+						"type": "separator",
+						"margin": "xxl"
+					      },
+					      {
+						"type": "box",
+						"layout": "vertical",
+						"margin": "xxl",
+						"spacing": "sm",
+						"contents": [
+						  {
+						    "type": "text",
+						    "text": "ยินดีต้อนรับคุณ Alexpook",
+						    "size": "sm",
+						    "weight": "bold",
+						    "color": "#555555",
+						    "align": "center",
+						    "flex": 0
+						  },
+						  {
+						    "type": "text",
+						    "text": "คิวของคุณคือ",
+						    "size": "sm",
+						    "color": "#555555",
+						    "align": "center",
+						    "flex": 0
+						  },
+						  {
+						    "type": "text",
+						    "text": "A001",
+						    "size": "xxl",
+						    "weight": "bold",
+						    "color": "#555555",
+						    "align": "center",
+						    "flex": 0
+						  },
+						  {
+						    "type": "box",
+						    "layout": "horizontal",
+						    "contents": [
+						      {
+							"type": "text",
+							"text": "จำนวนคิวที่รอ",
+							"size": "sm",
+							"color": "#555555",
+							"flex": 0
+						      },
+						      {
+							"type": "text",
+							"text": "5",
+							"size": "sm",
+							"color": "#111111",
+							"align": "end"
+						      }
+						    ]
+						  },
+						  {
+						    "type": "box",
+						    "layout": "horizontal",
+						    "contents": [
+						      {
+							"type": "text",
+							"text": "เวลาที่รอโดยประมาณ",
+							"size": "sm",
+							"color": "#555555",
+							"flex": 0
+						      },
+						      {
+							"type": "text",
+							"text": "10.36 นาที",
+							"size": "sm",
+							"color": "#111111",
+							"align": "end"
+						      }
+						    ]
+						  }
+						]
+					      },
+					      {
+						"type": "separator",
+						"margin": "xxl"
+					      },
+					      {
+						"type": "box",
+						"layout": "horizontal",
+						"margin": "md",
+						"contents": [
+						  {
+						    "type": "text",
+						    "text": "ขอบคุณที่ใช้บริการ",
+						    "size": "xs",
+						    "color": "#aaaaaa",
+						    "flex": 0
+						  },
+						  {
+						    "type": "text",
+						    "text": "D-Sci Corporation.",
+						    "color": "#aaaaaa",
+						    "size": "xs",
+						    "align": "end"
+						  }
+						]
 					      }
 					    ]
 					  }
-					]
-				      },
-				      {
-					"type": "separator",
-					"margin": "xxl"
-				      },
-				      {
-					"type": "box",
-					"layout": "horizontal",
-					"margin": "md",
-					"contents": [
-					  {
-					    "type": "text",
-					    "text": "ขอบคุณที่ใช้บริการ",
-					    "size": "xs",
-					    "color": "#aaaaaa",
-					    "flex": 0
-					  },
-					  {
-					    "type": "text",
-					    "text": "D-Sci Corporation.",
-					    "color": "#aaaaaa",
-					    "size": "xs",
-					    "align": "end"
-					  }
-					]
-				      }
-				    ]
-				  }
-				}
+					}
 			
 			
 		);
