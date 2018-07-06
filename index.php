@@ -6,8 +6,13 @@ $msg = $bot->getMessageText();
 $userid = $bot->getUserId();
 $profile = $bot->getProfile($userid);
 
+// Read JSON file
+$json = file_get_contents('./postmasterq.json');
 
-$bot->replyflex($profile);
+//Decode JSON
+$json_data = json_decode($json,true);
+
+$bot->replyflex($json_data);
 //$bot->reply($profile." --> ".$msg);
 
 //echo $json_data;
