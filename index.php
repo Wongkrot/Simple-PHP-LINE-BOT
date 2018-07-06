@@ -9,8 +9,8 @@ $profile = $bot->getProfile($userid);
 
 $obj = json_decode($profile);
 
-//$bot->replyFlex($userid);
-$bot->reply($obj->{'displayName'}." --> ".$msg);
+$bot->replyFlex($userid);
+//$bot->reply($obj->{'displayName'}." --> ".$msg);
 
 //echo $json_data;
 
