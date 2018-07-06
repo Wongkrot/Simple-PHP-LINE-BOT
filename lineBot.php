@@ -174,7 +174,7 @@ class Linebot {
 		$body["messages"][0] = array(
 			"type" => "flex",
 			"altText" => "this is a flex message",
-			"contents" => "contents" : {
+			"contents" => {
 					  "type": "bubble",
 					  "styles": {
 					    "footer": {
