@@ -15,6 +15,7 @@ class Linebot {
 	private $webhookEventObject;
 	private $apiReply;
 	private $apiPush;
+	private $reserveQ
 
 	
 	public function __construct(){
@@ -22,6 +23,7 @@ class Linebot {
 		$this->channelSecret = Setting::getChannelSecret();
 		$this->apiReply = Setting::getApiReply();
 		$this->apiPush = Setting::getApiPush();
+		$this->reserveQ = Setting::reserveQueue();
 		$this->webhookResponse = file_get_contents('php://input');
 		$this->webhookEventObject = json_decode($this->webhookResponse);
 	}
@@ -342,6 +344,27 @@ class Linebot {
 		);
 		
 		$result = $this->httpPost($api,$body);
+		return $result;
+	}
+	
+	public function getQ($text){
+		
+		$api = $this->reserveQ;		 
+		$body["branchID"] = "B0002";
+		$body["queueType"] = "L";
+		$body["serviceID"] = "";				
+		
+		$ch = curl_init($api); 
+		curl_setopt($ch, CURLOPT_POST, true); 
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST'); 
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body)); 
+		//curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
+		//'Content-Type: application/json; charser=UTF-8', 
+		//'Authorization: Bearer '.$this->channelAccessToken)); 
+		$result = curl_exec($ch); 
+		curl_close($ch);
+		
 		return $result;
 	}
 }
