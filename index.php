@@ -12,7 +12,7 @@ $json = file_get_contents('postmasterq.json');
 //Decode JSON
 $json_data = json_decode($json,true);
 
-$bot->reply($json_data);
+$bot->replyflex($json_data);
 //$bot->reply($profile." --> ".$msg);
 
 //echo $name;
