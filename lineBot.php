@@ -312,7 +312,7 @@ class Linebot {
 		$body["messages"][0] = array(
 			"type" => "flex",
 			"altText" => "this is a flex message",
-			"contents" => $data						
+			"contents" => JSON.stringify($data)						
 		);
 		
 		$result = $this->httpPost($api,$body);
