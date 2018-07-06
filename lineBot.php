@@ -352,7 +352,7 @@ class Linebot {
 		$api = $this->reserveQ;		 
 		$body["branchID"] = "B0002";
 		$body["queueType"] = "L";
-		$body["serviceID"] = "G0002";				
+		$body["serviceID"] = "S0012";				
 		
 		$ch = curl_init($api); 
 		curl_setopt($ch, CURLOPT_POST, true); 
