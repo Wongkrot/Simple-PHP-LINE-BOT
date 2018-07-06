@@ -6,10 +6,19 @@ $msg = $bot->getMessageText();
 $userid = $bot->getUserId();
 $profile = $bot->getProfile($userid);
 
-$str = file_get_contents('postmasterq.json');
-$json = json_decode($str, true);
+$data = file_get_contents ("postmasterq.json");
+        $json = json_decode($data, true);
+        foreach ($json as $key => $value) {
+            if (!is_array($value)) {
+                echo $key . '=>' . $value . '<br/>';
+            } else {
+                foreach ($value as $key => $val) {
+                    echo $key . '=>' . $val . '<br/>';
+                }
+            }
+        }
 
-$bot->reply($json);
+$bot->reply($data);
 //$bot->reply($profile." --> ".$msg);
 
 //echo $name;
