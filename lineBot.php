@@ -165,34 +165,158 @@ class Linebot {
 		//return $result['displayName'];		
 	}
 	
-	public function replyFlex($userid){
+	public function replyFlex($userid){				
 		
-		$json = file_get_contents("/postmasterq.json");
-		$json_data = json_decode($string, true);
-				
-		$body = array(
-          	  'to' => $userid,
-          	  'messages' => [
-          	      array(
-			    'type' => 'flex',
-			    'contents' => $json_data		    
-			)
-		    ]
+		$api = $this->apiReply;
+		//$webhook = $this->webhookEventObject;
+		//$replyToken = $webhook->{"events"}[0]->{"replyToken"}; 
+		$body["to"] = $userid;
+		$body["messages"][0] = array(
+			"type" => "flex",
+			"altText" => "this is a flex message",
+			"contents" => {
+				  "type": "bubble",
+				  "styles": {
+				    "footer": {
+				      "separator": true
+				    }
+				  },
+				  "body": {
+				    "type": "box",
+				    "layout": "vertical",
+				    "contents": [
+				      {
+					"type": "text",
+					"text": "MasterQ",
+					"weight": "bold",
+					"color": "#1DB446",
+					"size": "sm"
+				      },
+				      {
+					"type": "text",
+					"text": "บริษัทไปรษณีย์ไทย",
+					"weight": "bold",
+					"size": "xxl",
+					"margin": "md"
+				      },
+				      {
+					"type": "text",
+					"text": "สาขาสกลนคร อำเภอเมือง",
+					"size": "xs",
+					"color": "#aaaaaa",
+					"wrap": true
+				      },
+				      {
+					"type": "separator",
+					"margin": "xxl"
+				      },
+				      {
+					"type": "box",
+					"layout": "vertical",
+					"margin": "xxl",
+					"spacing": "sm",
+					"contents": [
+					  {
+					    "type": "text",
+					    "text": "ยินดีต้อนรับคุณ Alexpook",
+					    "size": "sm",
+					    "weight": "bold",
+					    "color": "#555555",
+					    "align": "center",
+					    "flex": 0
+					  },
+					  {
+					    "type": "text",
+					    "text": "คิวของคุณคือ",
+					    "size": "sm",
+					    "color": "#555555",
+					    "align": "center",
+					    "flex": 0
+					  },
+					  {
+					    "type": "text",
+					    "text": "A001",
+					    "size": "xxl",
+					    "weight": "bold",
+					    "color": "#555555",
+					    "align": "center",
+					    "flex": 0
+					  },
+					  {
+					    "type": "box",
+					    "layout": "horizontal",
+					    "contents": [
+					      {
+						"type": "text",
+						"text": "จำนวนคิวที่รอ",
+						"size": "sm",
+						"color": "#555555",
+						"flex": 0
+					      },
+					      {
+						"type": "text",
+						"text": "5",
+						"size": "sm",
+						"color": "#111111",
+						"align": "end"
+					      }
+					    ]
+					  },
+					  {
+					    "type": "box",
+					    "layout": "horizontal",
+					    "contents": [
+					      {
+						"type": "text",
+						"text": "เวลาที่รอโดยประมาณ",
+						"size": "sm",
+						"color": "#555555",
+						"flex": 0
+					      },
+					      {
+						"type": "text",
+						"text": "10.36 นาที",
+						"size": "sm",
+						"color": "#111111",
+						"align": "end"
+					      }
+					    ]
+					  }
+					]
+				      },
+				      {
+					"type": "separator",
+					"margin": "xxl"
+				      },
+				      {
+					"type": "box",
+					"layout": "horizontal",
+					"margin": "md",
+					"contents": [
+					  {
+					    "type": "text",
+					    "text": "ขอบคุณที่ใช้บริการ",
+					    "size": "xs",
+					    "color": "#aaaaaa",
+					    "flex": 0
+					  },
+					  {
+					    "type": "text",
+					    "text": "D-Sci Corporation.",
+					    "color": "#aaaaaa",
+					    "size": "xs",
+					    "align": "end"
+					  }
+					]
+				      }
+				    ]
+				  }
+				}
+			
+			
 		);
 		
-		$url = 'https://api.line.me/v2/bot/message/push';
-						
-		$ch = curl_init($url);			
-		curl_setopt($ch, CURLOPT_POST, true); 
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST'); 
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body)));	
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
-		'Content-Type: application/json; charser=UTF-8', 
-		'Authorization: Bearer '.$this->channelAccessToken));
-		$result = curl_exec($ch);		
-		curl_close ($ch);
-						
+		$result = $this->httpPost($api,$body);
 		return $result;
 	}
 }
