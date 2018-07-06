@@ -17,5 +17,9 @@ class Setting {
 		$api = "https://api.line.me/v2/bot/message/push";
 		return $api;
 	}
+	public function reserveQueue(){
+		$api = "http://www.d-sci.co.th/QueueService.svc/Branch/ReserveQueue";
+		return $api;
+	}
 
 }
