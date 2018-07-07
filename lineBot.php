@@ -27,7 +27,7 @@ class Linebot {
 		$this->apiPush = Setting::getApiPush();
 		$this->reserveQ = Setting::reserveQueue();
 		$this->serviceQ = Setting::serviceQueue();
-		$this->branchID = Setting::getBranch();
+		$this->branchID = "B0002";
 		$this->webhookResponse = file_get_contents('php://input');
 		$this->webhookEventObject = json_decode($this->webhookResponse);
 	}
