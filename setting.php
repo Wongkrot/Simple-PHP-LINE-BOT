@@ -27,9 +27,5 @@ class Setting {
 		return $api;
 	}
 	
-	public function getBranch(){
-		$api = "B0002";
-		return $api;
-	}
-	
+
 }
