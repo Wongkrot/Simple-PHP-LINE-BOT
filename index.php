@@ -21,7 +21,7 @@ $service_obj = json_decode($service);
 
 $desc = "";
 $i = 1;
-foreach($service_obj->{'services'} as $item) {
+foreach($service_obj as $item) {
     $desc = $desc.$i.") ".$item['groupID']." | ".$item['serviceDesc']."\n";    
     $i++;
 }
