@@ -18,7 +18,7 @@ $profile_obj = json_decode($profile);
 
 $service = $bot->getServiceQ("B0002");
 $service_obj = json_decode($service);
-$bot->reply($service_obj->{'services'});
+$bot->reply($service_obj->{'services'}[0]->{'serviceDesc'});
 //$bot->reply("tEST");
 
 
