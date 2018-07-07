@@ -23,7 +23,7 @@ class Setting {
 	}
 	
 	public function serviceQueue(){
-		$api = "http://www.d-sci.co.th/QueueService.svc/Member/GetBranchServices/";
+		$api = "http://www.d-sci.co.th/QueueService.svc/User/GetService/";
 		return $api;
 	}
 	
