@@ -378,4 +378,23 @@ class Linebot {
 		
 		return $result;
 	}
+	
+	public function getServiceQ(){
+		
+		$api = $this->reserveQ;		 
+		$body["branchID"] = "B0002";
+				
+		$ch = curl_init($api); 
+		curl_setopt($ch, CURLOPT_POST, true); 
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST'); 
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body)); 
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
+		'Content-Type: application/json; charser=UTF-8',                                                                
+    		'Authorization: ')); 
+		$result = curl_exec($ch); 
+		curl_close($ch);
+		
+		return $result;
+	}
 }
