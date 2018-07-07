@@ -5,21 +5,20 @@ $bot = new Linebot();
 $msg = $bot->getMessageText();
 $userid = $bot->getUserId();
 $profile = $bot->getProfile($userid);
-$obj1 = json_decode($profile);
+$profile_obj = json_decode($profile);
 
-//$bot->reply($obj1->{'displayName'}." --> ".$msg);
+//$bot->reply($profile_obj->{'displayName'}." --> ".$msg);
 
-$queue = $bot->getQ("B0002", "S0012");
-$obj2 = json_decode($queue);
-$qnumber = $obj2->{'queue'}->{'queueNumber'};
-$esttime = $obj2->{'queue'}->{'estimateTime'};
-$qbefore = $obj2->{'queue'}->{'queueBefore'};
-$bot->replyFlex($userid, $obj1->{'displayName'}, $qnumber, $esttime, $qbefore);
+//$queue = $bot->getQ("B0002", "S0012");
+//$queue_obj = json_decode($queue);
+//$qnumber = $queue_obj->{'queue'}->{'queueNumber'};
+//$esttime = $queue_obj->{'queue'}->{'estimateTime'};
+//$qbefore = $queue_obj->{'queue'}->{'queueBefore'};
+//$bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);
 
-//$service = $bot->getServiceQ("B0002");
-//$obj3 = json_decode($service);
-
-//$bot->reply($obj3);
+$service = $bot->getServiceQ("B0002");
+$service_obj = json_decode($service);
+$bot->reply($service_obj);
 
 
 
