@@ -312,7 +312,7 @@ class Linebot {
 						  5 => 
 						  array (
 						    'type' => 'text',
-						    'text' => 'Queue Date : '.date("d-m-Y"),
+						    'text' => 'Queue Date : '.date("d-m-Y h:i:sa"),
 						    'size' => 'xs',
 						    'color' => '#555555',
 						    'align' => 'center',
@@ -448,6 +448,7 @@ class Linebot {
 						    'size' => 'sm',
 						    'color' => '#555555',
 						    'align' => 'center',
+						    'wrap' => 'true',
 						    'flex' => 0,
 						  ),	
 							
