@@ -23,7 +23,7 @@ $service_obj = json_decode($service);
 $cnt = count($service_obj->{'services'});
 $desc = "";
 for ($i=0; $i<=$cnt; $i++) {
-    $j = $i + 1;
+    $j = $i; $j++;
     $desc = $desc.$j.") ".$service_obj->{'services'}[$i]->{'groupID'}." | ".$service_obj->{'services'}[$i]->{'serviceDesc'}."\n";
 }
 $bot->reply($desc);
