@@ -27,4 +27,9 @@ class Setting {
 		return $api;
 	}
 	
+	public function branchID(){
+		$api = "B0002";
+		return $api;
+	}
+	
 }
