@@ -18,7 +18,14 @@ $profile_obj = json_decode($profile);
 
 $service = $bot->getServiceQ("B0002");
 $service_obj = json_decode($service);
-$bot->reply($service_obj->{'services'}[0]->{'serviceDesc'});
+
+$desc = "";
+$i = 1;
+foreach($service_obj->{'services'} as $item) {
+    $desc = $desc.$i.") ".$item['groupID']." | ".$item['serviceDesc']."\n";    
+    $i++;
+}
+$bot->reply($desc);
 //$bot->reply("tEST");
 
 
