@@ -18,7 +18,8 @@ $profile_obj = json_decode($profile);
 
 $service = $bot->getServiceQ("B0002");
 $service_obj = json_decode($service);
-$bot->reply($service_obj);
+//$bot->reply($service_obj);
+$bot->reply("tEST");
 
 
 
