@@ -360,12 +360,12 @@ class Linebot {
 		return $result;
 	}
 	
-	public function getQ(){
+	public function getQ($branchID, $serviceID){
 		
 		$api = $this->reserveQ;		 
-		$body["branchID"] = "B0002";
+		$body["branchID"] = $branchID;
 		$body["queueType"] = "L";
-		$body["serviceID"] = "S0012";				
+		$body["serviceID"] = $serviceID;				
 		
 		$ch = curl_init($api); 
 		curl_setopt($ch, CURLOPT_POST, true); 
@@ -381,10 +381,10 @@ class Linebot {
 		return $result;
 	}
 	
-	public function getServiceQ(){
+	public function getServiceQ($branchID){
 		
 		$api = $this->serviceQ;		 
-		$body["branchID"] = "B0002";
+		$body["branchID"] = $branchID;
 				
 		$ch = curl_init($api); 
 		curl_setopt($ch, CURLOPT_POST, true); 
