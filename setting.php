@@ -22,6 +22,11 @@ class Setting {
 		return $api;
 	}
 	
+	public function serviceQueue(){
+		$api = "http://www.d-sci.co.th/QueueService.svc/Branch/GetService/";
+		return $api;
+	}
+	
 	public function branchID(){
 		$api = "B0002";	
 		return $api;
