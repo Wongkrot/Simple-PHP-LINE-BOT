@@ -448,7 +448,7 @@ class Linebot {
 						    'size' => 'sm',
 						    'color' => '#555555',
 						    'align' => 'center',
-						    'wrap' => 'true',
+						    'wrap' => true,
 						    'flex' => 0,
 						  ),	
 							
