@@ -27,7 +27,7 @@ for ($i=0; $i<$cnt; $i++) {
     //$desc = $desc."กด Q".$j." เพื่อจองคิว ".$service_obj->{'services'}[$i]->{'groupID'}." | ".$service_obj->{'services'}[$i]->{'serviceDesc'}."\n";
     $desc = $desc."กด Q".$j." ".$service_obj->{'services'}[$i]->{'serviceDesc'}."\n";
 }
-$bot->replyFlexMenu($userid, $desc);
+$bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
 
 
 //$bot->reply($service_obj->{'services'}[0]->{'serviceDesc'});
