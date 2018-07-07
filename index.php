@@ -19,7 +19,7 @@ $obj1 = json_decode($profile);
 //$bot->replyFlex($userid, $obj1->{'displayName'}, $qnumber, $esttime, $qbefore);
 
 $service = $bot->getServiceQ();
-$bot->reply($obj1->{$service);
+$bot->reply($service);
 
 
 
