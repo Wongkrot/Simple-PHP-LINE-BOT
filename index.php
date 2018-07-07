@@ -19,13 +19,11 @@ $profile_obj = json_decode($profile);
 $service = $bot->getServiceQ("B0002");
 $service_obj = json_decode($service);
 
+
+$cnt = count($service_obj->{'services'});
 $desc = "";
-$i = 1;
-foreach($service_obj->{'services'} as $key => $value) {
-    $desc = $desc.$i.") ";
-    if ($key == 'groupID') $desc = $desc.$value;
-    if ($key == 'serviceDesc') $desc = $desc.$value."\n";
-    $i++;
+for ($i=0; $i<$cnt; $i++) {
+    $desc = $desc.$i.") ".$service_obj->{'services'}[0]->{'groupID'}." | ".$service_obj->{'services'}[0]->{'serviceDesc'}."\n";
 }
 $bot->reply($desc);
 
