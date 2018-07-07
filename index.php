@@ -9,11 +9,11 @@ $obj1 = json_decode($profile);
 
 //$bot->reply($obj1->{'displayName'}." --> ".$msg);
 
-$queue = $bot->getQ();
-$obj2 = json_decode($queue);
-$qnumber = $obj2->{'queue'}->{'queueNumber'};
-$esttime = $obj2->{'queue'}->{'estimateTime'};
-$qbefore = $obj2->{'queue'}->{'queueBefore'};
+//$queue = $bot->getQ();
+//$obj2 = json_decode($queue);
+//$qnumber = $obj2->{'queue'}->{'queueNumber'};
+//$esttime = $obj2->{'queue'}->{'estimateTime'};
+//$qbefore = $obj2->{'queue'}->{'queueBefore'};
 
 
 //$bot->replyFlex($userid, $obj1->{'displayName'}, $qnumber, $esttime, $qbefore);
