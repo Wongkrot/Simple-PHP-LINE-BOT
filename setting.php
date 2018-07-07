@@ -22,10 +22,10 @@ class Setting {
 		return $api;
 	}
 	
-	//public function serviceQueue(){
-	//	$api = "http://www.d-sci.co.th/QueueService.svc/Branch/GetService/";
-	//	return $api;
-	//}
+	public function serviceQueue(){
+		$api = "http://www.d-sci.co.th/QueueService.svc/Branch/GetService/";
+		return $api;
+	}
 	
 
 }
