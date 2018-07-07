@@ -360,7 +360,7 @@ class Linebot {
 		return $result;
 	}
 	
-	public function replyFlexMenu($userid, $text){				
+	public function replyFlexMenu($userid, $name, $text){				
 																						
 		$api = $this->apiPush;
 		//$webhook = $this->webhookEventObject;
@@ -435,7 +435,7 @@ class Linebot {
 						  array (
 						    'type' => 'text',
 						    'text' => 'รูปแบบการกดเพื่อจองคิว',
-						    'size' => 'sm',
+						    'size' => 'xxl',						    
 						    'color' => '#555555',
 						    'align' => 'center',
 						    'flex' => 0,
