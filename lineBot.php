@@ -385,8 +385,9 @@ class Linebot {
 		
 		$api = $this->serviceQ;	
 		
-		$body = array('branchID' => $branchID);
+		//$body = array('branchID' => $branchID);
 		//$body->{'branchID'} = $branchID;
+		$body["branchID"] = $branchID;
 		
 				
 		$ch = curl_init($api); 
