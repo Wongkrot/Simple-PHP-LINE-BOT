@@ -383,7 +383,8 @@ class Linebot {
 	
 	public function getServiceQ($branchID){
 		
-		$api = $this->serviceQ;	
+		//$api = $this->serviceQ;	
+		$api = "http://www.d-sci.co.th/QueueService.svc/Branch/GetService/";
 		
 		//$body = array('branchID' => $branchID);
 		//$body->{'branchID'} = $branchID;
