@@ -9,17 +9,17 @@ $obj1 = json_decode($profile);
 
 //$bot->reply($obj1->{'displayName'}." --> ".$msg);
 
-//$queue = $bot->getQ("B0002", "S0012");
-//$obj2 = json_decode($queue);
-//$qnumber = $obj2->{'queue'}->{'queueNumber'};
-//$esttime = $obj2->{'queue'}->{'estimateTime'};
-//$qbefore = $obj2->{'queue'}->{'queueBefore'};
-//$bot->replyFlex($userid, $obj1->{'displayName'}, $qnumber, $esttime, $qbefore);
+$queue = $bot->getQ("B0002", "S0012");
+$obj2 = json_decode($queue);
+$qnumber = $obj2->{'queue'}->{'queueNumber'};
+$esttime = $obj2->{'queue'}->{'estimateTime'};
+$qbefore = $obj2->{'queue'}->{'queueBefore'};
+$bot->replyFlex($userid, $obj1->{'displayName'}, $qnumber, $esttime, $qbefore);
 
-$service = $bot->getServiceQ("B0002");
-$obj3 = json_decode($service);
+//$service = $bot->getServiceQ("B0002");
+//$obj3 = json_decode($service);
 
-$bot->reply($obj3);
+//$bot->reply($obj3);
 
 
 
