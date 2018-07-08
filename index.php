@@ -29,16 +29,16 @@ for ($i=0; $i<$cnt; $i++) {
     }
 }
 
-if ($chk == true) {
+//if ($chk == true) {
     $queue = $bot->getQ($branchID, $groupid);
     $queue_obj = json_decode($queue);
     $qnumber = $queue_obj->{'queue'}->{'queueNumber'};
     $esttime = $queue_obj->{'queue'}->{'estimateTime'};
     $qbefore = $queue_obj->{'queue'}->{'queueBefore'};
     $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);   
-} else {
+//} else {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
-}
+//}
 
 //$bot->reply($service_obj->{'services'}[0]->{'serviceDesc'});
 //$bot->reply("tEST");
