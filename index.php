@@ -36,7 +36,7 @@ if ($chk == 1) {
     $esttime = $queue_obj->{'queue'}->{'estimateTime'};
     $qbefore = $queue_obj->{'queue'}->{'queueBefore'};
     $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);   
-    $bot->reply($branch." : ".$serviceid);
+    //$bot->reply($branch." : ".$serviceid);
 } else {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
 }
