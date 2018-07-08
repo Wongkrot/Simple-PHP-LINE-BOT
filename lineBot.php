@@ -491,7 +491,7 @@ class Linebot {
 		
 		$result = $this->httpPost($api,$body);
 		return $result;
-	}
+	}		
 	
 	public function getQ($branchID, $memberID, $serviceID){
 		
