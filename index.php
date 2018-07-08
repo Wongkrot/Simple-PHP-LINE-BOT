@@ -17,28 +17,28 @@ $service_obj = json_decode($service);
 
 $cnt = count($service_obj->{'services'});
 $desc = "";
-$chk = false;
+$chk = 0;
 for ($i=0; $i<$cnt; $i++) {
     $j = $i+1;
     //$desc = $desc."พิมพ์ ".$j." เพื่อจองคิว ".$service_obj->{'services'}[$i]->{'groupID'}." | ".$service_obj->{'services'}[$i]->{'serviceDesc'}."\n";
     $desc = $desc."พิมพ์ ".$j." [".$service_obj->{'services'}[$i]->{'serviceDesc'}."]\n";
     
     if ($msg == "$j") {         
-        $chk = true;
+        $chk = 1;
         $groupid = $service_obj->{'services'}[$i]->{'groupID'};             
     }
 }
 
-//if ($chk == true) {
+if ($chk == 1) {
     $queue = $bot->getQ($branchID, $groupid);
     $queue_obj = json_decode($queue);
     $qnumber = $queue_obj->{'queue'}->{'queueNumber'};
     $esttime = $queue_obj->{'queue'}->{'estimateTime'};
     $qbefore = $queue_obj->{'queue'}->{'queueBefore'};
     $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);   
-//} else {
+} else {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
-//}
+}
 
 //$bot->reply($service_obj->{'services'}[0]->{'serviceDesc'});
 //$bot->reply("tEST");
