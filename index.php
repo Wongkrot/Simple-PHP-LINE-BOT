@@ -11,7 +11,7 @@ $profile_obj = json_decode($profile);
 //$bot->reply($profile_obj->{'displayName'}." --> ".$msg);
 
 // Get Service from BranchID
-$branch = "B0002";
+$branch = "B0001";
 $service = $bot->getServiceQ($branch);
 $service_obj = json_decode($service);
 
@@ -43,7 +43,7 @@ if ($chk == 1) {
         $bot->reply("ขออภัย สาขายังไม่เปิดให้บริการ");   
     } else {
         $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);   
-    }
+    } // เหลือการจองเบิ้ลบริการ
     //$bot->reply($branch." : ".$serviceid." : ".$qnumber);
 } else {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
