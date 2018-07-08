@@ -25,18 +25,18 @@ for ($i=0; $i<$cnt; $i++) {
     
     if ($msg == "$j") {         
         $chk = 1;
-        $groupid = $service_obj->{'services'}[$i]->{'groupID'};             
+        $serviceid = $service_obj->{'services'}[$i]->{'serviceID'};             
     }
 }
 
 if ($chk == 1) {
-    $queue = $bot->getQ($branch, $groupid);
-    //$queue_obj = json_decode($queue);
-    //$qnumber = $queue_obj->{'queue'}->{'queueNumber'};
-    //$esttime = $queue_obj->{'queue'}->{'estimateTime'};
-    //$qbefore = $queue_obj->{'queue'}->{'queueBefore'};
-    //$bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);   
-    $bot->reply($branch." : ".$groupid);
+    $queue = $bot->getQ($branch, $serviceid);
+    $queue_obj = json_decode($queue);
+    $qnumber = $queue_obj->{'queue'}->{'queueNumber'};
+    $esttime = $queue_obj->{'queue'}->{'estimateTime'};
+    $qbefore = $queue_obj->{'queue'}->{'queueBefore'};
+    $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);   
+    //$bot->reply($branch." : ".$groupid);
 } else {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
 }
