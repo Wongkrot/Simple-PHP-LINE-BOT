@@ -11,7 +11,7 @@ $profile_obj = json_decode($profile);
 //$bot->reply($profile_obj->{'displayName'}." --> ".$msg);
 
 // Get Service from BranchID
-$branch = "B0001";
+$branch = "B0002";
 $service = $bot->getServiceQ($branch);
 $service_obj = json_decode($service);
 
@@ -39,8 +39,8 @@ if ($chk == 1) {
     $esttime = $queue_obj->{'queue'}->{'estimateTime'};
     $qbefore = $queue_obj->{'queue'}->{'queueBefore'};
     
-    /*if ($header == "ขออภัย สาขายังไม่เปิดให้") {
-        $bot->reply("ขออภัยสาขายังไม่เปิดให้บริการ");      
+    /*if ($header == "ขออภัย สาขายังไม่เปิดให้จองคิว") {
+        $bot->reply("ขออภัย สาขายังไม่เปิดให้จองคิว");      
     } elseif ($header == "EstimateTime0") {
         $bot->reply("กรุณารอเรียกคิว");      
     } elseif ($header == "ReserveQueueSuccess") {
