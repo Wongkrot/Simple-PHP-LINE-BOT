@@ -32,7 +32,7 @@ for ($i=0; $i<$cnt; $i++) {
 if ($chk == 1) {
     $queue = $bot->getQ($branch, $userid, $serviceid);
     $queue_obj = json_decode($queue);
-    $header  = $queue_obj->{'header'}->{'codeValue'};
+    $header  = $queue_obj->{'header'}->{'isSuccess'};
     $qnumber = $queue_obj->{'queue'}->{'queueNumber'};
     $esttime = $queue_obj->{'queue'}->{'estimateTime'};
     $qbefore = $queue_obj->{'queue'}->{'queueBefore'};
@@ -48,11 +48,12 @@ if ($chk == 1) {
     //}// เหลือการจองเบิ้ลบริการ
     //$bot->reply($branch." : ".$serviceid." : ".$qnumber);
     
-    if ($header == "ขออภัย สาขายังไม่เปิดให้จองคิว") {
+    if ($header == flase) 
         $bot->reply("ขออภัย สาขายังไม่เปิดให้บริการ");   
-    } else {
+    else 
         $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);
-    }
+    
+    
 } else {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
 }
