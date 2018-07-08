@@ -32,7 +32,7 @@ for ($i=0; $i<$cnt; $i++) {
 if ($chk == 1) {
     $queue = $bot->getQ($branch, $userid, $serviceid);
     $queue_obj = json_decode($queue);
-    $header  = $queue_obj->{'header'}->{'codeValue'};
+    $header  = $queue_obj->{'header'}->{'message'};
     $qnumber = $queue_obj->{'queue'}->{'queueNumber'};
     $esttime = $queue_obj->{'queue'}->{'estimateTime'};
     $qbefore = $queue_obj->{'queue'}->{'queueBefore'};
