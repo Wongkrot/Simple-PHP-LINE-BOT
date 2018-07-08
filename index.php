@@ -39,14 +39,14 @@ if ($chk == 1) {
     $esttime = $queue_obj->{'queue'}->{'estimateTime'};
     $qbefore = $queue_obj->{'queue'}->{'queueBefore'};
     
-    /*if ($header == "ขออภัย สาขายังไม่เปิดให้จองคิว") {
+    if ($header == "ขออภัย สาขายังไม่เปิดให้จองคิว") {
         $bot->reply("ขออภัย สาขายังไม่เปิดให้จองคิว");      
     } elseif ($header == "EstimateTime0") {
         $bot->reply("กรุณารอเรียกคิว");      
     } elseif ($header == "ReserveQueueSuccess") {
         $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);
-    } // รอถามอ๊อด */
-    $bot->reply($userid ." , ". $profile_obj->{'displayName'} ." , ". $qnumber ." , ". $esttime ." , ". $qbefore ." , ".$serviceid ." , ". $header);      
+    } // รอถามอ๊อด 
+    //$bot->reply($userid ." , ". $profile_obj->{'displayName'} ." , ". $qnumber ." , ". $esttime ." , ". $qbefore ." , ".$serviceid ." , ". $header);      
     
 } else {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
