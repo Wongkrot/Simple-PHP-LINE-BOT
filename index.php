@@ -42,7 +42,9 @@ if ($chk == 1) {
     if ($header == "ขออภัย สาขายังไม่เปิดให้จองคิว") {
         $bot->reply("ขออภัย สาขายังไม่เปิดให้จองคิว");      
     } elseif ($header == "EstimateTime0") {
-        $bot->reply("กรุณารอเรียกคิว");      
+        $bot->reply("กรุณารอเรียกคิว");
+    } elseif ($header == "Queuehasalready") {
+        $bot->reply("กรุณารอเรียกคิว"); 
     } elseif ($header == "ReserveQueueSuccess") {
         $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);
     } // รอถามอ๊อด 
