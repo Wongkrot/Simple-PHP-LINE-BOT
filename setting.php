@@ -18,8 +18,8 @@ class Setting {
 		return $api;
 	}
 	public function reserveQueue(){
-		$api = "http://www.d-sci.co.th/QueueService.svc/Branch/ReserveQueue/";
-		//$api = "http://www.d-sci.co.th/QueueService.svc/Member/ReserveQueue/";
+		//$api = "http://www.d-sci.co.th/QueueService.svc/Branch/ReserveQueue/";
+		$api = "http://www.d-sci.co.th/QueueService.svc/Member/ReserveQueue/";
 		return $api;
 	}
 	
