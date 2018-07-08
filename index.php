@@ -31,11 +31,12 @@ for ($i=0; $i<$cnt; $i++) {
 
 if ($chk == 1) {
     $queue = $bot->getQ($branch, $groupid);
-    $queue_obj = json_decode($queue);
-    $qnumber = $queue_obj->{'queue'}->{'queueNumber'};
-    $esttime = $queue_obj->{'queue'}->{'estimateTime'};
-    $qbefore = $queue_obj->{'queue'}->{'queueBefore'};
-    $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);   
+    //$queue_obj = json_decode($queue);
+    //$qnumber = $queue_obj->{'queue'}->{'queueNumber'};
+    //$esttime = $queue_obj->{'queue'}->{'estimateTime'};
+    //$qbefore = $queue_obj->{'queue'}->{'queueBefore'};
+    //$bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);   
+    $bot->reply($branch." : ".$groupid);
 } else {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
 }
