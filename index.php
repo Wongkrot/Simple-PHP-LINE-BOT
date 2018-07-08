@@ -43,7 +43,7 @@ if ($chk == 1) {
     } else {
         $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);
     }
-    
+    $bot->reply($userid ." , ". $profile_obj->{'displayName'} ." , ". $qnumber ." , ". $esttime ." , ". $qbefore);      
     
 } else {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
