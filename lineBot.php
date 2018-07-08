@@ -493,10 +493,11 @@ class Linebot {
 		return $result;
 	}
 	
-	public function getQ($branchID, $serviceID){
+	public function getQ($branchID, $memberID, $serviceID){
 		
 		$api = $this->reserveQ;		 
 		$body["branchID"] = $branchID;
+		$body["memberID"] = $memberID;
 		$body["queueType"] = "L";
 		$body["serviceID"] = $serviceID;				
 		
