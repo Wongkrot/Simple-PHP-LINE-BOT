@@ -31,8 +31,8 @@ for ($i=0; $i<$cnt; $i++) {
 
 if ($chk == 1) {
    
-    //$queue = $bot->getQ($branch, $userid, $serviceid);
-    $queue = $bot->getQ($branch, "Test123", $serviceid);
+    $queue = $bot->getQ($branch, $userid, $serviceid);
+    //$queue = $bot->getQ($branch, "Test123", $serviceid);
     $queue_obj = json_decode($queue);
     
     $qnumber = $queue_obj->{'queue'}->{'queueNumber'};
