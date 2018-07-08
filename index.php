@@ -11,7 +11,7 @@ $profile_obj = json_decode($profile);
 //$bot->reply($profile_obj->{'displayName'}." --> ".$msg);
 
 // Get Service from BranchID
-$branch = "B0001";
+$branch = "B0002";
 $service = $bot->getServiceQ($branch);
 $service_obj = json_decode($service);
 
