@@ -30,28 +30,19 @@ for ($i=0; $i<$cnt; $i++) {
 }
 
 if ($chk == 1) {
+   
     $queue = $bot->getQ($branch, $userid, $serviceid);
     $queue_obj = json_decode($queue);
-    //$header  = $queue_obj->{'header'}->{'isSuccess'};
+    
     $qnumber = $queue_obj->{'queue'}->{'queueNumber'};
     $esttime = $queue_obj->{'queue'}->{'estimateTime'};
     $qbefore = $queue_obj->{'queue'}->{'queueBefore'};
     
-    //if ($header == "Queuehasalready") {
-    //    $bot->reply("กรุณารอเรียกคิว ท่านได้จองคิวแล้ว");   
-    //} elseif ($header == "ขออภัย สาขายังไม่เปิดให้จองคิว") {
-    //    $bot->reply("ขออภัย สาขายังไม่เปิดให้บริการ");   
-    //} elseif ($header == "ReserveQueueSuccess") {
-    //    $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);   
-    //} else {
-    //    $bot->reply("กรุณารอการปลดล็อคการจองคิว ".$header);   
-    //}// เหลือการจองเบิ้ลบริการ
-    //$bot->reply($branch." : ".$serviceid." : ".$qnumber);
-    
-    //if ($header == flase) 
-    //    $bot->reply("ขออภัย สาขายังไม่เปิดให้บริการ");   
-    //else 
+    if ($qnumber == "0") {
+        $bot->reply("ขออภัยสาขายังไม่เปิดให้บริการ");      
+    } else {
         $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);
+    }
     
     
 } else {
