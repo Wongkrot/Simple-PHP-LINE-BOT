@@ -44,7 +44,7 @@ if ($chk == 1) {
     } elseif ($header == "ReserveQueueSuccess") {
         $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);   
     } else {
-        $bot->reply("กรุณารอการปลดล็อคการจองคิว");   
+        $bot->reply("กรุณารอการปลดล็อคการจองคิว ".$header);   
     }// เหลือการจองเบิ้ลบริการ
     //$bot->reply($branch." : ".$serviceid." : ".$qnumber);
 } else {
