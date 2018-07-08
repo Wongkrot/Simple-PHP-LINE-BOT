@@ -21,7 +21,7 @@ $chk = false;
 for ($i=0; $i<$cnt; $i++) {
     $j = $i+1;
     //$desc = $desc."พิมพ์ ".$j." เพื่อจองคิว ".$service_obj->{'services'}[$i]->{'groupID'}." | ".$service_obj->{'services'}[$i]->{'serviceDesc'}."\n";
-    $desc = $desc."พิมพ์ ".$j." ".$service_obj->{'services'}[$i]->{'serviceDesc'}."\n";
+    $desc = $desc."พิมพ์ ".$j." [".$service_obj->{'services'}[$i]->{'serviceDesc'}."]\n";
     
     if ($msg == $j) {         
         $chk = true;
