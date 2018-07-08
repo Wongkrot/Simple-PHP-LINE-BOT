@@ -23,7 +23,7 @@ for ($i=0; $i<$cnt; $i++) {
     //$desc = $desc."พิมพ์ ".$j." เพื่อจองคิว ".$service_obj->{'services'}[$i]->{'groupID'}." | ".$service_obj->{'services'}[$i]->{'serviceDesc'}."\n";
     $desc = $desc."พิมพ์ ".$j." [".$service_obj->{'services'}[$i]->{'serviceDesc'}."]\n";
     
-    if ($msg == $j) {         
+    if ($msg == "$j") {         
         $chk = true;
         $groupid = $service_obj->{'services'}[$i]->{'groupID'};             
     }
