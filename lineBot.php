@@ -497,7 +497,7 @@ class Linebot {
 		
 		$api = $this->reserveQ;		 
 		$body["branchID"] = $branchID;
-		$body["memberID"] = $memberID;
+		//$body["memberID"] = $memberID;
 		$body["queueType"] = "L";
 		$body["serviceID"] = $serviceID;				
 		
