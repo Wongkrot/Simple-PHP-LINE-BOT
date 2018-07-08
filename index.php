@@ -39,11 +39,13 @@ if ($chk == 1) {
     
     if ($header == "Queuehasalready") {
         $bot->reply("กรุณารอเรียกคิว ท่านได้จองคิวแล้ว");   
-    } else if ($header == "ขออภัย สาขายังไม่เปิดให้จองคิว") {
+    } elseif ($header == "ขออภัย สาขายังไม่เปิดให้จองคิว") {
         $bot->reply("ขออภัย สาขายังไม่เปิดให้บริการ");   
-    } else {
+    } elseif ($header == "ReserveQueueSuccess") {
         $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);   
-    } // เหลือการจองเบิ้ลบริการ
+    } else {
+        $bot->reply("กรุณารอการปลดล็อคการจองคิว");   
+    }// เหลือการจองเบิ้ลบริการ
     //$bot->reply($branch." : ".$serviceid." : ".$qnumber);
 } else {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
