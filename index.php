@@ -11,8 +11,8 @@ $profile_obj = json_decode($profile);
 //$bot->reply($profile_obj->{'displayName'}." --> ".$msg);
 
 // Get Service from BranchID
-$branchID = "B0002";
-$service = $bot->getServiceQ($branchID);
+$branch = "B0002";
+$service = $bot->getServiceQ($branch);
 $service_obj = json_decode($service);
 
 $cnt = count($service_obj->{'services'});
@@ -30,7 +30,7 @@ for ($i=0; $i<$cnt; $i++) {
 }
 
 if ($chk == 1) {
-    $queue = $bot->getQ($branchID, $groupid);
+    $queue = $bot->getQ($branch, $groupid);
     $queue_obj = json_decode($queue);
     $qnumber = $queue_obj->{'queue'}->{'queueNumber'};
     $esttime = $queue_obj->{'queue'}->{'estimateTime'};
