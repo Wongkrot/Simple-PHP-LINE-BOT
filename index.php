@@ -38,9 +38,9 @@ if ($chk == 1) {
     $qbefore = $queue_obj->{'queue'}->{'queueBefore'};
     
     if ($header == "Queuehasalready") {
-        $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, "กรุณารอเรียกคิว ท่านได้จองคิวแล้ว");   
+        $bot->reply("กรุณารอเรียกคิว ท่านได้จองคิวแล้ว");   
     } else if ($header == "ขออภัย สาขายังไม่เปิดให้จองคิว") {
-        $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, "ขออภัย สาขายังไม่เปิดให้บริการ");   
+        $bot->reply("ขออภัย สาขายังไม่เปิดให้บริการ");   
     } else {
         $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);   
     }
