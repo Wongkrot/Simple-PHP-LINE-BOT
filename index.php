@@ -34,7 +34,7 @@ if ($chk == 1) {
     $queue = $bot->getQ($branch, $userid, $serviceid);
     //$queue = $bot->getQ($branch, "Test123", $serviceid);
     $queue_obj = json_decode($queue);
-    
+    $header  = $queue_obj->{'header'}->{'codeValue'};
     $qnumber = $queue_obj->{'queue'}->{'queueNumber'};
     $esttime = $queue_obj->{'queue'}->{'estimateTime'};
     $qbefore = $queue_obj->{'queue'}->{'queueBefore'};
@@ -44,7 +44,7 @@ if ($chk == 1) {
     } else {
         $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);
     }
-    $bot->reply($userid ." , ". $profile_obj->{'displayName'} ." , ". $qnumber ." , ". $esttime ." , ". $qbefore ." , ".$serviceid);      
+    $bot->reply($userid ." , ". $profile_obj->{'displayName'} ." , ". $qnumber ." , ". $esttime ." , ". $qbefore ." , ".$serviceid ." , ". $header);      
     
 } else {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
