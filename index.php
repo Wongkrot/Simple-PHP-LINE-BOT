@@ -48,9 +48,9 @@ if ($chk == 1) {
     //}// เหลือการจองเบิ้ลบริการ
     //$bot->reply($branch." : ".$serviceid." : ".$qnumber);
     
-    if ($header == flase) 
-        $bot->reply("ขออภัย สาขายังไม่เปิดให้บริการ");   
-    else 
+    //if ($header == flase) 
+    //    $bot->reply("ขออภัย สาขายังไม่เปิดให้บริการ");   
+    //else 
         $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);
     
     
