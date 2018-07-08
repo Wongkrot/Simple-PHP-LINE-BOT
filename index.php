@@ -37,16 +37,22 @@ if ($chk == 1) {
     $esttime = $queue_obj->{'queue'}->{'estimateTime'};
     $qbefore = $queue_obj->{'queue'}->{'queueBefore'};
     
-    if ($header == "Queuehasalready") {
-        $bot->reply("กรุณารอเรียกคิว ท่านได้จองคิวแล้ว");   
-    } elseif ($header == "ขออภัย สาขายังไม่เปิดให้จองคิว") {
-        $bot->reply("ขออภัย สาขายังไม่เปิดให้บริการ");   
-    } elseif ($header == "ReserveQueueSuccess") {
-        $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);   
-    } else {
-        $bot->reply("กรุณารอการปลดล็อคการจองคิว ".$header);   
-    }// เหลือการจองเบิ้ลบริการ
+    //if ($header == "Queuehasalready") {
+    //    $bot->reply("กรุณารอเรียกคิว ท่านได้จองคิวแล้ว");   
+    //} elseif ($header == "ขออภัย สาขายังไม่เปิดให้จองคิว") {
+    //    $bot->reply("ขออภัย สาขายังไม่เปิดให้บริการ");   
+    //} elseif ($header == "ReserveQueueSuccess") {
+    //    $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);   
+    //} else {
+    //    $bot->reply("กรุณารอการปลดล็อคการจองคิว ".$header);   
+    //}// เหลือการจองเบิ้ลบริการ
     //$bot->reply($branch." : ".$serviceid." : ".$qnumber);
+    
+    if ($header == "ขออภัย สาขายังไม่เปิดให้จองคิว") {
+        $bot->reply("ขออภัย สาขายังไม่เปิดให้บริการ");   
+    } else {
+        $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);
+    }
 } else {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
 }
