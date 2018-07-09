@@ -28,7 +28,7 @@ class Setting {
 	}
 	
 	public function cancelQueue(){
-		$api = "http://www.d-sci.co.th/QueueService.svc/Member/CancelQueue/";				
+		$api = "http://www.d-sci.co.th/QueueService.svc/Member/LineCancelQueue/";				
 		return $api;
 	}
 }
