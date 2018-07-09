@@ -171,7 +171,7 @@ class Linebot {
 		//return $result['displayName'];		
 	}
 	
-	public function replyFlex($userid, $name, $qnumber, $esttime, $qbefore){				
+	public function replyFlex($userid, $name, $qnumber, $esttime, $qbefore, $servicedesc){				
 
 																						
 		$api = $this->apiPush;
@@ -255,6 +255,15 @@ class Linebot {
 						  2 => 
 						  array (
 						    'type' => 'text',
+						    'text' => $servicedesc,
+						    'size' => 'sm',
+						    'color' => '#555555',
+						    'align' => 'center',
+						    'flex' => 0,
+						  ),						
+						  3 => 
+						  array (
+						    'type' => 'text',
 						    'text' => $qnumber,
 						    'size' => 'xxl',
 						    'weight' => 'bold',
@@ -262,7 +271,7 @@ class Linebot {
 						    'align' => 'center',
 						    'flex' => 0,
 						  ),
-						  3 => 
+						  4 => 
 						  array (
 						    'type' => 'box',
 						    'layout' => 'horizontal',
@@ -286,7 +295,7 @@ class Linebot {
 						      ),
 						    ),
 						  ),
-						  4 => 
+						  5 => 
 						  array (
 						    'type' => 'box',
 						    'layout' => 'horizontal',
@@ -311,7 +320,7 @@ class Linebot {
 						    ),
 						  ),
 							
-						  5 => 
+						  6 => 
 						  array (
 						    'type' => 'text',
 						    'text' => 'Queue Date : '.date("d-m-Y h:i:sa"),
