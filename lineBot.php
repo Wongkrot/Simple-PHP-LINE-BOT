@@ -17,6 +17,7 @@ class Linebot {
 	private $apiPush;
 	private $reserveQ;
 	private $serviceQ;
+	private $cancelQ;
 
 	
 	public function __construct(){
@@ -26,6 +27,7 @@ class Linebot {
 		$this->apiPush = Setting::getApiPush();
 		$this->reserveQ = Setting::reserveQueue();
 		$this->serviceQ = Setting::serviceQueue();
+		$this->cancelQ = Setting::cancelQueue();
 		$this->webhookResponse = file_get_contents('php://input');
 		$this->webhookEventObject = json_decode($this->webhookResponse);
 	}
@@ -518,11 +520,26 @@ class Linebot {
 	public function getServiceQ($branchID){
 		
 		$api = $this->serviceQ;	
-		//$api = "http://www.d-sci.co.th/QueueService.svc/Branch/GetService/";
+		$body["branchID"] = $branchID;	
+				
+		$ch = curl_init($api); 
+		curl_setopt($ch, CURLOPT_POST, true); 
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST'); 
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body)); 
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
+		'Content-Type: application/json; charser=UTF-8',                                                                
+    		'Authorization: ')); 
+		$result = curl_exec($ch); 
+		curl_close($ch);
 		
-		//$body = array('branchID' => $branchID);
-		//$body->{'branchID'} = $branchID;
-		$body["branchID"] = $branchID;
+		return $result;
+	}
+	
+	public function setCancelQ($userid){
+		
+		$api = $this->cancelQ;	
+		$body["tranID"] = $userid;
 		
 				
 		$ch = curl_init($api); 
