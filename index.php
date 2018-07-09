@@ -50,6 +50,9 @@ if ($chk == 1) {
     } // รอถามอ๊อด 
     //$bot->reply($userid ." , ". $profile_obj->{'displayName'} ." , ". $qnumber ." , ". $esttime ." , ". $qbefore ." , ".$serviceid ." , ". $header);      
     
+} elseif ((chk == 0) && ($msg == "X")) {
+    $bot->setCancelQ($userid);
+    $bot->reply("คิวที่ท่านจองได้ถูกยกเลิกเรียบร้อย.");
 } else {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
 }
