@@ -548,7 +548,7 @@ class Linebot {
 	public function setCancelQ($userid){
 		
 		$api = $this->cancelQ;	
-		$body["tranID"] = $userid;
+		$body["memberID"] = $userid;
 		
 				
 		$ch = curl_init($api); 
