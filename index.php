@@ -26,6 +26,7 @@ for ($i=0; $i<$cnt; $i++) {
     if ($msg == "$j") {         
         $chk = 1;
         $serviceid = $service_obj->{'services'}[$i]->{'serviceID'};             
+        $servicedesc = $service_obj->{'services'}[$i]->{'serviceDesc'};
     }
 }
 
@@ -48,7 +49,7 @@ if ($chk == 1) {
     } elseif ($header == "Queuehasalready") {
         $bot->reply("กรุณารอเรียกคิว"); 
     } elseif ($header == "ReserveQueueSuccess") {
-        $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore);
+        $bot->replyFlex($userid, $profile_obj->{'displayName'}, $qnumber, $esttime, $qbefore, $servicedesc);
     } // รอถามอ๊อด 
     //$bot->reply($userid ." , ". $profile_obj->{'displayName'} ." , ". $qnumber ." , ". $esttime ." , ". $qbefore ." , ".$serviceid ." , ". $header);      
     
