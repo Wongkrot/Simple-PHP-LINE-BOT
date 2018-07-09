@@ -29,6 +29,8 @@ for ($i=0; $i<$cnt; $i++) {
     }
 }
 
+$desc = $desc."\n พิมพ์ X สำหรับยกเลิกการจองคิว";
+
 if ($chk == 1) {
    
     $queue = $bot->getQ($branch, $userid, $serviceid);
