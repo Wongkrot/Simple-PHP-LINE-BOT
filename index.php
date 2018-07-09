@@ -44,6 +44,8 @@ if ($chk == 1) {
     
     if ($header == "ขออภัย สาขายังไม่เปิดให้จองคิว") {
         $bot->reply("ขออภัย สาขายังไม่เปิดให้จองคิว");      
+    } elseif ($header == "ไม่ให้จองซ้ำติดต่อกัน") {
+        $bot->reply("ท่านจองบริการเดิมติดต่อกัน กรุณารอประมาณ 5 นาที");
     } elseif ($header == "EstimateTime0") {
         $bot->reply("กรุณารอเรียกคิว");
     } elseif ($header == "Queuehasalready") {
