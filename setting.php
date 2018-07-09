@@ -18,16 +18,17 @@ class Setting {
 		return $api;
 	}
 	public function reserveQueue(){
-		//$api = "http://www.d-sci.co.th/QueueService.svc/Branch/ReserveQueue/";
 		$api = "http://www.d-sci.co.th/QueueService.svc/Member/ReserveQueue/";
 		return $api;
 	}
 	
 	public function serviceQueue(){
-		$api = "http://www.d-sci.co.th/QueueService.svc/Branch/GetService/";		
-		
+		$api = "http://www.d-sci.co.th/QueueService.svc/Branch/GetService/";				
 		return $api;
 	}
 	
-
+	public function cancelQueue(){
+		$api = "http://www.d-sci.co.th/QueueService.svc/Member/CancelQueue/";				
+		return $api;
+	}
 }
