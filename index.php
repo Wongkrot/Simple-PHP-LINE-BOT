@@ -18,6 +18,7 @@ $service_obj = json_decode($service);
 $cnt = count($service_obj->{'services'});
 $desc = "";
 $chk = 0;
+$service_button = array();
 for ($i=0; $i<$cnt; $i++) {
     $j = $i+1;
     //$desc = $desc."พิมพ์ ".$j." เพื่อจองคิว ".$service_obj->{'services'}[$i]->{'groupID'}." | ".$service_obj->{'services'}[$i]->{'serviceDesc'}."\n";
@@ -28,6 +29,11 @@ for ($i=0; $i<$cnt; $i++) {
         $serviceid = $service_obj->{'services'}[$i]->{'serviceID'};             
         $servicedesc = $service_obj->{'services'}[$i]->{'serviceDesc'};
     }
+
+    // Add Button
+    $stack= array("type": "button", "label": "secondary", "text": $j);
+    $buttons=array(type": "text", "label": $desc, "action",$stack);    
+    array_push($service_button, $button);
 }
 
 $desc = $desc."\n พิมพ์ X สำหรับยกเลิกการจองคิว";
@@ -72,7 +78,7 @@ if ($chk == 1) {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
   
 } else {
-    $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
+    $bot->replyFlexQ($userid, $profile_obj->{'displayName'}, $desc, $service_button);
 }
 
 //$bot->reply($service_obj->{'services'}[0]->{'serviceDesc'});
