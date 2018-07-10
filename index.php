@@ -18,8 +18,8 @@ $service_obj = json_decode($service);
 $cnt = count($service_obj->{'services'});
 $desc = "";
 $chk = 0;
-//$service_button = array();
-$service_button = "บริการ EMS";
+$service_button = array();
+//$service_button = "บริการ EMS";
 for ($i=0; $i<$cnt; $i++) {
     $j = $i+1;
     //$desc = $desc."พิมพ์ ".$j." เพื่อจองคิว ".$service_obj->{'services'}[$i]->{'groupID'}." | ".$service_obj->{'services'}[$i]->{'serviceDesc'}."\n";
@@ -31,10 +31,20 @@ for ($i=0; $i<$cnt; $i++) {
         $servicedesc = $service_obj->{'services'}[$i]->{'serviceDesc'};
     }
 
-    // Add Button ผิด
-    //$stack= array("type": "button", "label": "secondary", "text": $j);
-    //$buttons=array(type": "text", "label": $desc, "action": $stack);    
-    //array_push($service_button, $button);
+    // Add Button ผิด    
+     array (
+							 'type' => 'button',
+							 'style' => 'secondary',
+							 'action' => 
+							 array (
+							   'type' => 'message',
+							   'label' => $service_button,
+							   'text' => '1',
+							 ),
+						      ),
+    $stack= array("type" => "message", "label" => $service_obj->{'services'}[$i]->{'serviceDesc'}, "text" => $j);
+    $buttons=array("type" => "button", "label" => "secondary", "action" => $stack);    
+    array_push($service_button, $button);
 }
 
 $desc = $desc."\n พิมพ์ X สำหรับยกเลิกการจองคิว";
@@ -79,7 +89,8 @@ if ($chk == 1) {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
   
 } else {
-    $bot->replyFlexQ($userid, $profile_obj->{'displayName'}, $service_button);
+    //$bot->replyFlexQ($userid, $profile_obj->{'displayName'}, $service_button);
+    $bot->reply($service_button);
 }
 
 //$bot->reply($service_obj->{'services'}[0]->{'serviceDesc'});
