@@ -84,7 +84,7 @@ if ($chk == 1) {
   
 } else {
     //$bot->replyFlexQ($userid, $profile_obj->{'displayName'}, $service_button);
-    $bot->reply($service_button);
+    $bot->reply(print_r($service_button));
 }
 
 //$bot->reply($service_obj->{'services'}[0]->{'serviceDesc'});
