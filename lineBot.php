@@ -609,7 +609,7 @@ class Linebot {
 							 'style' => 'secondary',
 							 'action' => 
 							 array (
-							   'type' => 'ส่งด่วน EMS',
+							   'type' => 'message',
 							   'label' => $service_button,
 							   'text' => '1',
 							 ),
