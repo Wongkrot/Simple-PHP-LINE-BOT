@@ -58,7 +58,7 @@ if ($chk == 1) {
 } elseif ((chk == 0) && (($msg == "X") || ($msg == "x"))) {
     $bot->setCancelQ($userid);
     $bot->reply("คิวที่ท่านจองได้ถูกยกเลิกเรียบร้อย.");
-/*} elseif ((chk == 0) && ($msg == "GetAmt")) {
+} elseif ((chk == 0) && ($msg == "GetAmt")) {
     $servAmt = $bot->getAmtServiceQ($branch);
     $servAmt_obj = json_decode($service);
     $cnt = count($servAmt_obj->{'services'});
@@ -69,7 +69,7 @@ if ($chk == 1) {
         $desc = $desc.$servAmt_obj->{'services'}[$i]->{'serviceDesc'}." มีจำนวน ".$servAmt_obj->{'services'}[$i]->{'queueNumber'}." คิว\n";
     }
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
-  */  
+  
 } else {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
 }
