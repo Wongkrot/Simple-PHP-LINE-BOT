@@ -594,7 +594,7 @@ class Linebot {
 						  1 => 
 						  array (
 						    'type' => 'text',
-						    'text' => 'รูปแบบการกดเพื่อจองคิว',
+						    'text' => 'กรุณาเลือกบริการ',
 						    'size' => 'sm',
 						    'weight' => 'bold',
 						    'color' => '#555555',
