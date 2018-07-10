@@ -611,7 +611,7 @@ class Linebot {
 							   'type' => 'text',
 							   'label' => $service_button,
 							   'text' => '1',
-							 )
+							 ),
 						      ),
 							
 						),
