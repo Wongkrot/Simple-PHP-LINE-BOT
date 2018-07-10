@@ -602,15 +602,16 @@ class Linebot {
 						    'flex' => 0,
 						  ),						  						 						 
 							
-						  2 => $service_button, 
-						  /*array (
-						    'type' => 'text',
-						    'text' => $text,
-						    'size' => 'sm',
-						    'color' => '#555555',						    
-						    'wrap' => true,
-						    'flex' => 0,
-						  ),*/	
+						  2 =>  
+						  array (
+						    'type' => 'button',
+						    'style' => 'secondary',
+						    'action' => array(
+						    		"type": "text",
+          							"label": $service_button,
+          							"text": "1"						    
+							   ),
+						  ),	
 							
 						),
 					      ),
