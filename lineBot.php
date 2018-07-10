@@ -528,7 +528,7 @@ class Linebot {
 		$body["queueType"] = "L";
 		$body["serviceID"] = $serviceID;				
 		
-		$result = $this->httpMasterQPost($api, $body) 				
+		$result = $this->httpMasterQPost($api, $body); 				
 		return $result;
 	}
 	
@@ -537,7 +537,7 @@ class Linebot {
 		$api = $this->serviceQ;	
 		$body["branchID"] = $branchID;	
 				
-		$result = $this->httpMasterQPost($api, $body) 				
+		$result = $this->httpMasterQPost($api, $body); 				
 		return $result;
 	}
 	
@@ -546,7 +546,7 @@ class Linebot {
 		$api = $this->getAmtQ;	
 		$body["branchID"] = $branchID;		
 				
-		$result = $this->httpMasterQPost($api, $body) 				
+		$result = $this->httpMasterQPost($api, $body); 				
 		return $result;
 	}
 	
@@ -555,7 +555,7 @@ class Linebot {
 		$api = $this->cancelQ;	
 		$body["memberID"] = $userid;		
 				
-		$result = $this->httpMasterQPost($api, $body) 				
+		$result = $this->httpMasterQPost($api, $body); 				
 		return $result;
 	}
 }
