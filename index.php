@@ -36,7 +36,7 @@ for ($i=0; $i<$cnt; $i++) {
 	     'style' => 'secondary',
 	     'action' => array ('type' => 'message',
 				'label' => $service_obj->{'services'}[$i]->{'serviceDesc'},
-				'text' => $j,
+				'text' => $j
 		    	       ));
     array_push($service_button, $data);
 }
