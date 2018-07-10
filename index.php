@@ -67,7 +67,7 @@ if ($chk == 1) {
     $chk = 0;
     for ($i=0; $i<$cnt; $i++) {   
         $j = $i+1;
-        $desc = $desc.$j.". ".$servAmt_obj->{'services'}[$i]->{'serviceDesc'}." \n      มีจำนวนคิว ".$servAmt_obj->{'services'}[$i]->{'queueNumber'}." คิว\n";
+        $desc = $desc.$j.". ".$servAmt_obj->{'services'}[$i]->{'serviceDesc'}." \n   มีจำนวนคิว ".$servAmt_obj->{'services'}[$i]->{'queueNumber'}." คิว\n";
     }
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
   
