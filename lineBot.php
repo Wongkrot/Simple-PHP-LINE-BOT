@@ -608,9 +608,9 @@ class Linebot {
 							 'style' => 'secondary',
 							 'action' => 
 							 array (
-							   'type' => 'uri',
+							   'type' => 'message',
 							   'label' => $service_button,
-							   'uri' => 'https://example.com',
+							   'text' => '1',
 							 ),
 						      ),
 							
