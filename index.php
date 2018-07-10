@@ -78,7 +78,7 @@ if ($chk == 1) {
     $bot->replyFlexMenu($userid, $profile_obj->{'displayName'}, $desc);
   
 } else {
-    $bot->replyFlexQ($userid, $profile_obj->{'displayName'}, $desc, $service_button);
+    $bot->replyFlexQ($userid, $profile_obj->{'displayName'}, $service_button);
 }
 
 //$bot->reply($service_obj->{'services'}[0]->{'serviceDesc'});
