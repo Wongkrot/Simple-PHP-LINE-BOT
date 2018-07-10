@@ -32,19 +32,13 @@ for ($i=0; $i<$cnt; $i++) {
     }
 
     // Add Button ผิด    
-     array (
-							 'type' => 'button',
-							 'style' => 'secondary',
-							 'action' => 
-							 array (
-							   'type' => 'message',
-							   'label' => $service_button,
-							   'text' => '1',
-							 ),
-						      ),
-    $stack= array("type" => "message", "label" => $service_obj->{'services'}[$i]->{'serviceDesc'}, "text" => $j);
-    $buttons=array("type" => "button", "label" => "secondary", "action" => $stack);    
-    array_push($service_button, $button);
+     $data = array ( 'type' => 'button',
+	     'style' => 'secondary',
+	     'action' => array ('type' => 'message',
+				'label' => $service_obj->{'services'}[$i]->{'serviceDesc'},
+				'text' => $j,
+		    	       ));
+    array_push($service_button, $data);
 }
 
 $desc = $desc."\n พิมพ์ X สำหรับยกเลิกการจองคิว";
