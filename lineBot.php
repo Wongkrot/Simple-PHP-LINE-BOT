@@ -518,6 +518,139 @@ class Linebot {
 		
 		$result = $this->httpPost($api,$body);
 		return $result;
+	}
+	
+	public function replyFlexQ($userid, $name, $service_button){				
+																						
+		$api = $this->apiPush;
+		//$webhook = $this->webhookEventObject;
+		//$replyToken = $webhook->{"events"}[0]->{"replyToken"}; 
+		$body["to"] = $userid;
+		$body["messages"][0] = array(
+			"type" => "flex",
+			"altText" => "this is a flex message",
+			"contents" => array (
+					  'type' => 'bubble',
+					  'styles' => 
+					  array (
+					    'footer' => 
+					    array (
+					      'separator' => true,
+					    ),
+					  ),
+					  'body' => 
+					  array (
+					    'type' => 'box',
+					    'layout' => 'vertical',
+					    'contents' => 
+					    array (
+					      0 => 
+					      array (
+						'type' => 'text',
+						'text' => 'MasterQ',
+						'weight' => 'bold',
+						'color' => '#1DB446',
+						'size' => 'sm',
+					      ),
+					      1 => 
+					      array (
+						'type' => 'text',
+						'text' => 'บริษัทไปรษณีย์ไทย',
+						'weight' => 'bold',
+						'size' => 'xxl',
+						'margin' => 'md',
+					      ),
+					      2 => 
+					      array (
+						'type' => 'text',
+						'text' => 'สาขาต้นแบบ',
+						'size' => 'xs',
+						'color' => '#aaaaaa',
+						'wrap' => true,
+					      ),
+					      3 => 
+					      array (
+						'type' => 'separator',
+						'margin' => 'xxl',
+					      ),
+					      4 => 
+					      array (
+						'type' => 'box',
+						'layout' => 'vertical',
+						'margin' => 'xxl',
+						'spacing' => 'sm',
+						'contents' => 
+						array (
+						  0 => 
+						  array (
+						    'type' => 'text',
+						    'text' => 'ยินดีต้อนรับคุณ '.$name,
+						    'size' => 'sm',
+						    'weight' => 'bold',
+						    'color' => '#555555',
+						    'align' => 'center',
+						    'flex' => 0,
+						  ),
+						  1 => 
+						  array (
+						    'type' => 'text',
+						    'text' => 'รูปแบบการกดเพื่อจองคิว',
+						    'size' => 'sm',
+						    'weight' => 'bold',
+						    'color' => '#555555',
+						    'align' => 'center',
+						    'flex' => 0,
+						  ),						  						 						 
+							
+						  2 => $service_button, 
+						  /*array (
+						    'type' => 'text',
+						    'text' => $text,
+						    'size' => 'sm',
+						    'color' => '#555555',						    
+						    'wrap' => true,
+						    'flex' => 0,
+						  ),*/	
+							
+						),
+					      ),
+					      5 => 
+					      array (
+						'type' => 'separator',
+						'margin' => 'xxl',
+					      ),
+					      6 => 
+					      array (
+						'type' => 'box',
+						'layout' => 'horizontal',
+						'margin' => 'md',
+						'contents' => 
+						array (
+						  0 => 
+						  array (
+						    'type' => 'text',
+						    'text' => 'ขอบคุณที่ใช้บริการ',
+						    'size' => 'xs',
+						    'color' => '#aaaaaa',
+						    'flex' => 0,
+						  ),
+						  1 => 
+						  array (
+						    'type' => 'text',
+						    'text' => 'D-Sci Corporation.',
+						    'color' => '#aaaaaa',
+						    'size' => 'xs',
+						    'align' => 'end',
+						  ),
+						),
+					      ),
+					    ),
+					  ),
+					)						
+		);
+		
+		$result = $this->httpPost($api,$body);
+		return $result;
 	}		
 	
 	public function getQ($branchID, $memberID, $serviceID){
