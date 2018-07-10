@@ -31,9 +31,9 @@ for ($i=0; $i<$cnt; $i++) {
     }
 
     // Add Button
-    $stack= array("type": "button", "label": "secondary", "text": $j);
-    $buttons=array(type": "text", "label": $desc, "action": $stack);    
-    array_push($service_button, $button);
+    //$stack= array("type": "button", "label": "secondary", "text": $j);
+    //$buttons=array(type": "text", "label": $desc, "action": $stack);    
+    //array_push($service_button, $button);
 }
 
 $desc = $desc."\n พิมพ์ X สำหรับยกเลิกการจองคิว";
