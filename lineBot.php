@@ -602,17 +602,18 @@ class Linebot {
 						    'flex' => 0,
 						  ),						  						 						 
 							
-						  2 =>  {$service_button},
-						  /*array (
+						  2 =>  
+							//{$service_button},
+						  array (
 							 'type' => 'button',
 							 'style' => 'secondary',
 							 'action' => 
 							 array (
-							   'type' => 'message',
+							   'type' => 'ส่งด่วน EMS',
 							   'label' => $service_button,
 							   'text' => '1',
 							 ),
-						      ),*/
+						      ),
 							
 						),
 					      ),
