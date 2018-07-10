@@ -17,6 +17,7 @@ class Linebot {
 	private $apiPush;
 	private $reserveQ;
 	private $serviceQ;
+	private $getAmtQ;
 	private $cancelQ;
 
 	
@@ -27,6 +28,7 @@ class Linebot {
 		$this->apiPush = Setting::getApiPush();
 		$this->reserveQ = Setting::reserveQueue();
 		$this->serviceQ = Setting::serviceQueue();
+		$this->getAmtQ = Setting::getAmtQueue();
 		$this->cancelQ = Setting::cancelQueue();
 		$this->webhookResponse = file_get_contents('php://input');
 		$this->webhookEventObject = json_decode($this->webhookResponse);
@@ -41,6 +43,20 @@ class Linebot {
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
 		'Content-Type: application/json; charser=UTF-8', 
 		'Authorization: Bearer '.$this->channelAccessToken)); 
+		$result = curl_exec($ch); 
+		curl_close($ch); 
+		return $result;
+	}
+	
+	private function httpMasterQPost($api, $body) {
+		$ch = curl_init($api); 
+		curl_setopt($ch, CURLOPT_POST, true); 
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST'); 
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body)); 
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
+		'Content-Type: application/json; charser=UTF-8',                                                                
+    		'Authorization: ')); 
 		$result = curl_exec($ch); 
 		curl_close($ch); 
 		return $result;
@@ -512,17 +528,7 @@ class Linebot {
 		$body["queueType"] = "L";
 		$body["serviceID"] = $serviceID;				
 		
-		$ch = curl_init($api); 
-		curl_setopt($ch, CURLOPT_POST, true); 
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST'); 
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body)); 
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
-		'Content-Type: application/json; charser=UTF-8',                                                                
-    		'Authorization: ')); 
-		$result = curl_exec($ch); 
-		curl_close($ch);
-		
+		$result = $this->httpMasterQPost($api, $body) 				
 		return $result;
 	}
 	
@@ -531,37 +537,25 @@ class Linebot {
 		$api = $this->serviceQ;	
 		$body["branchID"] = $branchID;	
 				
-		$ch = curl_init($api); 
-		curl_setopt($ch, CURLOPT_POST, true); 
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST'); 
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body)); 
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
-		'Content-Type: application/json; charser=UTF-8',                                                                
-    		'Authorization: ')); 
-		$result = curl_exec($ch); 
-		curl_close($ch);
+		$result = $this->httpMasterQPost($api, $body) 				
+		return $result;
+	}
+	
+	public function getAmtServiceQ($branchID){
 		
+		$api = $this->getAmtQ;	
+		$body["branchID"] = $branchID;		
+				
+		$result = $this->httpMasterQPost($api, $body) 				
 		return $result;
 	}
 	
 	public function setCancelQ($userid){
 		
 		$api = $this->cancelQ;	
-		$body["memberID"] = $userid;
-		
+		$body["memberID"] = $userid;		
 				
-		$ch = curl_init($api); 
-		curl_setopt($ch, CURLOPT_POST, true); 
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST'); 
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body)); 
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
-		'Content-Type: application/json; charser=UTF-8',                                                                
-    		'Authorization: ')); 
-		$result = curl_exec($ch); 
-		curl_close($ch);
-		
+		$result = $this->httpMasterQPost($api, $body) 				
 		return $result;
 	}
 }
