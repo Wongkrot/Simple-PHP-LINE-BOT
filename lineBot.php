@@ -602,7 +602,7 @@ class Linebot {
 						    'flex' => 0,
 						  ),						  						 						 
 							
-						  2 =>  $service_button,
+						  2 =>  array($service_button),
 						  /*array (
 							 'type' => 'button',
 							 'style' => 'secondary',
