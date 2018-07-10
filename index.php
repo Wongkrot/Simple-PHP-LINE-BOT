@@ -18,8 +18,8 @@ $service_obj = json_decode($service);
 $cnt = count($service_obj->{'services'});
 $desc = "";
 $chk = 0;
-$service_button = array();
-//$service_button = "บริการ EMS";
+//$service_button = array();
+$service_button = "บริการ EMS";
 for ($i=0; $i<$cnt; $i++) {
     $j = $i+1;
     //$desc = $desc."พิมพ์ ".$j." เพื่อจองคิว ".$service_obj->{'services'}[$i]->{'groupID'}." | ".$service_obj->{'services'}[$i]->{'serviceDesc'}."\n";
@@ -31,15 +31,11 @@ for ($i=0; $i<$cnt; $i++) {
         $servicedesc = $service_obj->{'services'}[$i]->{'serviceDesc'};
     }
 
-    // Add Button
+    // Add Button ผิด
     //$stack= array("type": "button", "label": "secondary", "text": $j);
     //$buttons=array(type": "text", "label": $desc, "action": $stack);    
     //array_push($service_button, $button);
 }
-
-$stack= array("type": "button", "label": "secondary", "text": "1");
-$buttons=array(type": "text", "label": "ด่วน EMS.", "action": $stack);    
-array_push($service_button, $button);
 
 $desc = $desc."\n พิมพ์ X สำหรับยกเลิกการจองคิว";
 
