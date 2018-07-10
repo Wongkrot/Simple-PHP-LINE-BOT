@@ -602,7 +602,7 @@ class Linebot {
 						    'flex' => 0,
 						  ),						  						 						 
 							
-						  2 =>  
+						  /*2 =>  
 							//{$service_button},
 						  array (
 							 'type' => 'button',
@@ -613,7 +613,7 @@ class Linebot {
 							   'label' => $service_button,
 							   'text' => '1',
 							 ),
-						      ),
+						      ),*/
 							
 						),
 					      ),
@@ -652,6 +652,7 @@ class Linebot {
 					)						
 		);
 		
+		array_push($body["messages"][0]->{'contents'}->{'body'}->{'contents'}[4]->{'contents'}, $service_botton);
 		$result = $this->httpPost($api,$body);
 		return $result;
 	}		
