@@ -27,6 +27,11 @@ class Setting {
 		return $api;
 	}
 	
+	public function getAmtQueue(){
+		$api = "http://www.d-sci.co.th/QueueService.svc/Member/GetBranchServices/";				
+		return $api;
+	}
+	
 	public function cancelQueue(){
 		$api = "http://www.d-sci.co.th/QueueService.svc/Member/LineCancelQueue/";				
 		return $api;
