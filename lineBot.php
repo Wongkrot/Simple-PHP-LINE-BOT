@@ -603,15 +603,15 @@ class Linebot {
 						  ),						  						 						 
 							
 						  2 =>  
-						  array(
+						  array (
 							 'type' => 'button',
 							 'style' => 'secondary',
 							 'action' => 
-							 array(
+							 array (
 							   'type' => 'text',
 							   'label' => $service_button,
 							   'text' => '1',
-							 ),
+							 )
 						      ),
 							
 						),
