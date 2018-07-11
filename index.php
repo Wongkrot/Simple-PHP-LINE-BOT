@@ -38,7 +38,7 @@ for ($i=0; $i<$cnt; $i++) {
 				'label' => $service_obj->{'services'}[$i]->{'serviceDesc'},
 				'text' => $j
 		    	       ));
-    array_push($service_button, $data);
+    array_merge($service_button, $data);
 }
 
 $desc = $desc."\n พิมพ์ X สำหรับยกเลิกการจองคิว";
