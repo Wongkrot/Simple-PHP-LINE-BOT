@@ -602,7 +602,7 @@ class Linebot {
 						    'flex' => 0,
 						  ),						  						 						 
 							
-						  /*2 =>  
+						  2 =>  
 							//{$service_button},
 						  array (
 							 'type' => 'button',
@@ -610,10 +610,22 @@ class Linebot {
 							 'action' => 
 							 array (
 							   'type' => 'message',
-							   'label' => $service_button,
+							   'label' => 'ด่วนพิเศษ EMS',
 							   'text' => '1',
 							 ),
-						      ),*/
+						      ),
+						   3 =>  
+							//{$service_button},
+						  array (
+							 'type' => 'button',
+							 'style' => 'secondary',
+							 'action' => 
+							 array (
+							   'type' => 'message',
+							   'label' => 'ทำรายการมากกว่า 10 รายการ',
+							   'text' => '2',
+							 ),
+						      ),
 							
 						),
 					      ),
@@ -652,7 +664,7 @@ class Linebot {
 					)						
 		);
 		
-		array_merge($body["messages"][0]->{'contents'}->{'body'}->{'contents'}[4]->{'contents'}, $service_botton);
+		// array_merge($body["messages"][0]->{'contents'}->{'body'}->{'contents'}[4]->{'contents'}, $service_botton);
 		$result = $this->httpPost($api,$body);
 		return $result;
 	}		
