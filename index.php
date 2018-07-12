@@ -32,7 +32,7 @@ for ($i=0; $i<$cnt; $i++) {
     }
 
     // Add Button ผิด    
-     $data = array ( 'type' => 'button',
+     $data[$i+2] = array ( 'type' => 'button',
 	     'style' => 'secondary',
 	     'action' => array ('type' => 'message',
 				'label' => $service_obj->{'services'}[$i]->{'serviceDesc'},
