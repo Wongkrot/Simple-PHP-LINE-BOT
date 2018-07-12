@@ -602,7 +602,7 @@ class Linebot {
 						    'flex' => 0,
 						  ),						  						 						 
 							
-						  2 =>  
+						  /*2 =>  
 							//{$service_button},
 						  array (
 							 'type' => 'button',
@@ -625,8 +625,8 @@ class Linebot {
 							   'label' => 'ทำรายการมากกว่า 10 รายการ',
 							   'text' => '2',
 							 ),
-						      ),
-							
+						      ), */
+						   	
 						),
 					      ),
 					      5 => 
@@ -664,7 +664,7 @@ class Linebot {
 					)						
 		);
 		
-		// array_merge($body["messages"][0]->{'contents'}->{'body'}->{'contents'}[4]->{'contents'}, $service_botton);
+		array_push($body["messages"][0]["contents"]["body"]["contents"][4]["contents"], $service_button);
 		$result = $this->httpPost($api,$body);
 		return $result;
 	}		
