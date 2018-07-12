@@ -67,10 +67,10 @@ if ($chk == 1) {
     } // รอถามอ๊อด 
     //$bot->reply($userid ." , ". $profile_obj->{'displayName'} ." , ". $qnumber ." , ". $esttime ." , ". $qbefore ." , ".$serviceid ." , ". $header);      
     
-} elseif ((chk == 0) && (($msg == "X") || ($msg == "x"))) {
+} elseif ((chk == 0) && ($msg == "Cancel")) {
     $bot->setCancelQ($userid);
     $bot->reply("คิวที่ท่านจองได้ถูกยกเลิกเรียบร้อย.");
-} elseif ((chk == 0) && ($msg == "GetAmt")) {
+} elseif ((chk == 0) && ($msg == "Check")) {
     $servAmt = $bot->getAmtServiceQ($branch);
     $servAmt_obj = json_decode($service);
     $cnt = count($servAmt_obj->{'services'});
