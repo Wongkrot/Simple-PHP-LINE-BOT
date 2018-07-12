@@ -520,7 +520,7 @@ class Linebot {
 		return $result;
 	}
 	
-	public function replyFlexQ($userid, $name, $service_button){				
+	public function replyFlexQ($userid, $name, $service_button, $j){				
 																						
 		$api = $this->apiPush;
 		//$webhook = $this->webhookEventObject;
@@ -664,7 +664,17 @@ class Linebot {
 					)						
 		);
 		
-		array_push($body["messages"][0]["contents"]["body"]["contents"][4]["contents"], $service_button);
+		for ($i=0; $i<$j; $i++) {
+			$data = array ( 'type' => 'button',
+	     				'style' => 'secondary',
+	     				'action' => array ('type' => 'message',
+					'label' => $service_button[$i].$i+1,
+					'text' => $j
+		    	       	));
+
+			array_push($body["messages"][0]["contents"]["body"]["contents"][4]["contents"], $data);
+		}
+		
 		$result = $this->httpPost($api,$body);
 		return $result;
 	}		
