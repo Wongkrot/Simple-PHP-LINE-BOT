@@ -668,7 +668,7 @@ class Linebot {
 			$data = array ( 'type' => 'button',
 	     				'style' => 'secondary',
 	     				'action' => array ('type' => 'message',
-					'label' => $service_button[$i].$i+1,
+					'label' => $service_button[$i],
 					'text' => $j
 		    	       	));
 
