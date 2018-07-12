@@ -669,8 +669,7 @@ class Linebot {
 	     				'style' => 'secondary',
 	     				'action' => array ('type' => 'message',
 					'label' => $service_button[$i],
-					'text' => $j,
-					'wrap' => true
+					'text' => $j
 		    	       	));
 
 			array_push($body["messages"][0]["contents"]["body"]["contents"][4]["contents"], $data);
