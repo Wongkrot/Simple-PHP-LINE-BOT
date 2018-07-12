@@ -594,7 +594,7 @@ class Linebot {
 						  1 => 
 						  array (
 						    'type' => 'text',
-						    'text' => 'กรุณาเลือกบริการ',
+						    'text' => 'กรุณากดปุ่มเพื่อเลือกบริการ',
 						    'size' => 'sm',
 						    'weight' => 'bold',
 						    'color' => '#555555',
@@ -669,7 +669,8 @@ class Linebot {
 	     				'style' => 'secondary',
 	     				'action' => array ('type' => 'message',
 					'label' => $service_button[$i],
-					'text' => $j
+					'text' => $j,
+					'wrap' => true
 		    	       	));
 
 			array_push($body["messages"][0]["contents"]["body"]["contents"][4]["contents"], $data);
