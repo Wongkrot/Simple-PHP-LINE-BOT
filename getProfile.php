@@ -21,7 +21,7 @@ curl_close ($ch);
 
 echo "<br> <br> <br>";
 
-echo $profile_obj;
+echo $result->{'displayName'};
 
 echo "Test";
 
