@@ -187,22 +187,7 @@ class Linebot {
 		//return $result['displayName'];		
 	}
 	
-	public function getProfileLine(){				
-		$url = 'https://api.line.me/v2/bot/profile/';
 
-		$headers = array('Authorization: Bearer ' . $this->channelAccessToken);
-
-		$ch = curl_init($url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-		$result = curl_exec($ch);
-		curl_close($ch);
-
-		return $result;
-		//return $result['displayName'];		
-	}
-	
 	public function replyFlex($userid, $name, $qnumber, $esttime, $qbefore, $servicedesc){				
 
 																						
