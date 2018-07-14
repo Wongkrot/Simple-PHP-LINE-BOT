@@ -19,7 +19,9 @@ curl_close ($ch);
 
 //header('Location: http://www.d-sci.co.th/LineQ.html?profile='.$profile_obj->{'displayName'}); 
 
-//echo $profile_obj->{'displayName'};
+echo "<br> <br> <br>";
+
+echo $profile_obj->{'displayName'};
 
 echo "Test";
 
