@@ -21,7 +21,7 @@ curl_close ($ch);
 
 //echo $profile_obj->{'displayName'};
 
-echo "Test"
+echo "Test";
 
 
     
