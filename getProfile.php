@@ -21,7 +21,7 @@ curl_close ($ch);
 
 echo "<br> <br> <br>";
 
-echo $result->{'displayName'};
+echo $result;
 
 echo "Test";
 
