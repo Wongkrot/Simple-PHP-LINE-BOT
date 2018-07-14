@@ -21,6 +21,6 @@ $profile_obj = json_decode($result);
 
 //header('Location: http://www.d-sci.co.th/LineQ.html?profile='.$profile_obj->{'displayName'}); 
 
-echo $profile_obj->{'userId'}." : ".$profile_obj["Payload"]->{'displayName'}; 
+echo $profile_obj["Payload"]->{'displayName'}; 
 
     
