@@ -10,7 +10,7 @@ $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, $api);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $authen_api);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $authen_login);
 curl_setopt($ch, CURLOPT_POST, 1);
 
 $headers = array();
