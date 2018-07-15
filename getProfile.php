@@ -23,23 +23,18 @@ if (curl_errno($ch)) {
 }
 curl_close ($ch);*/
 
-$ch = curl_init();
-
-curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/oauth/verify");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, "--data-urlencode access_token=5ZXZrSS8ZkEDGBilHGY2vKyWARc0Yx6O9zOZ/iN24MH39flQZLWt7gvvOY10/LMD3rppnVJBza1RyQIMXJ2vsoPh8i+L2nyIG8y0tlqR/asJiq0gfm1W5wh93re+XESxhwpUoa5q3iZuokzvYqNIcgdB04t89/1O/w1cDnyilFU=");
-curl_setopt($ch, CURLOPT_POST, 1);
-
-$headers = array();
-$headers[] = "Content-Type: application/x-www-form-urlencoded";
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-$result = curl_exec($ch);
-if (curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
+try {
+    $oauth = new OAuth(OAUTH_CONSUMER_KEY,OAUTH_CONSUMER_SECRET);
+    $oauth->setToken($request_token,$request_token_secret);
+    $access_token_info = $oauth->getAccessToken("https://example.com/oauth/access_token");
+    if(!empty($access_token_info)) {
+        print_r($access_token_info);
+    } else {
+        print "Failed fetching access token, response was: " . $oauth->getLastResponse();
+    }
+} catch(OAuthException $E) {
+    echo "Response: ". $E->lastResponse . "\n";
 }
-curl_close ($ch);
-
 
 //header('Location: http://www.d-sci.co.th/LineQ.html?profile='.$profile_obj->{'displayName'}); 
 
