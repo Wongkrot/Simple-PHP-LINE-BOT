@@ -3,7 +3,7 @@
 $code = $_GET['code'];
 $api = "https://api.line.me/oauth2/v2.1/token";
 
-//$authen ="grant_type=authorization_code&code=$code;&redirect_uri=https://majestic-biscayne-65338.herokuapp.com/getProfile.php&client_id=1594277893&client_secret=d2a63d13dacf5041464d249127ebf50d";
+$authen ="grant_type=authorization_code&code=$code;&redirect_uri=https://majestic-biscayne-65338.herokuapp.com/getProfile.php&client_id=1594277893&client_secret=d2a63d13dacf5041464d249127ebf50d";
 
 $body["grant_type"] = "authorization_code";
 $body["code"] = $code;
@@ -18,7 +18,7 @@ $ch = curl_init($api);
 curl_setopt($ch, CURLOPT_POST, true); 
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST'); 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-curl_setopt($ch, CURLOPT_POSTFIELDS, $body); 
+curl_setopt($ch, CURLOPT_POSTFIELDS, $authen); 
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded');
 
 
