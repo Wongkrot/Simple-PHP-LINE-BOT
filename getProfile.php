@@ -25,7 +25,8 @@ curl_close ($ch); */
 
         $ch = curl_init();
 
-	curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/bot/profile/U7b0404c29adc3a97d6db31dff5987f8a");
+	//curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/bot/profile/U7b0404c29adc3a97d6db31dff5987f8a");
+	curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/profile");
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
 
