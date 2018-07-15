@@ -29,7 +29,9 @@ echo "<br> <br> <br>";
 
 echo $result." <br>";
 
-echo "$code : Test <br> $authen";
+echo "$code : Test <br> ";
+echo "$authen_login <br> ";
+echo "$authen_api <br> ";
 
 //print_r($_GET);
 
