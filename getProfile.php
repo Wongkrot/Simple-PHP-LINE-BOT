@@ -25,9 +25,11 @@ curl_close ($ch);
 
 echo "<br> <br> <br>";
 
-echo $result;
+echo $result." <br>";
 
-echo "$code , $userid, $name: Test";
+echo "$code , $userid, $name: Test <br>";
+
+print_r($_GET);
 
 
     
