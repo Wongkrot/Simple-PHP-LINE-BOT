@@ -31,7 +31,7 @@ curl_close ($ch); */
 
 
 	$headers = array();
-	$headers[] = "Authorization: Bearer {5ZXZrSS8ZkEDGBilHGY2vKyWARc0Yx6O9zOZ/iN24MH39flQZLWt7gvvOY10/LMD3rppnVJBza1RyQIMXJ2vsoPh8i+L2nyIG8y0tlqR/asJiq0gfm1W5wh93re+XESxhwpUoa5q3iZuokzvYqNIcgdB04t89/1O/w1cDnyilFU=}";
+	$headers[] = "Authorization: Bearer {d2a63d13dacf5041464d249127ebf50d}";
 	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 	$result = curl_exec($ch);
