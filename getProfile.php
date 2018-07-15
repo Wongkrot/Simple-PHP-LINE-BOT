@@ -26,7 +26,7 @@ curl_close ($ch);*/
 try {
     $oauth = new OAuth(OAUTH_CONSUMER_KEY,OAUTH_CONSUMER_SECRET);
     $oauth->setToken($request_token,$request_token_secret);
-    $access_token_info = $oauth->getAccessToken("https://example.com/oauth/access_token");
+    $access_token_info = $oauth->getAccessToken("https://api.line.me/oauth2/v2.1/token");
     if(!empty($access_token_info)) {
         print_r($access_token_info);
     } else {
