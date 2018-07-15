@@ -6,13 +6,13 @@ $api = "https://api.line.me/oauth2/v2.1/token";
 $authen_login ="grant_type=authorization_code&code=$code;&redirect_uri=https://majestic-biscayne-65338.herokuapp.com/getProfile.php&client_id=1594277893&client_secret=d2a63d13dacf5041464d249127ebf50d";
 $authen_api ="grant_type=authorization_code&code=$code;&redirect_uri=https://majestic-biscayne-65338.herokuapp.com/getProfile.php&client_id=1591950917&client_secret=33a71e2a76f6b89b4b31e61f02d93f97";
 
-
+		$channelAccessToken = '5ZXZrSS8ZkEDGBilHGY2vKyWARc0Yx6O9zOZ/iN24MH39flQZLWt7gvvOY10/LMD3rppnVJBza1RyQIMXJ2vsoPh8i+L2nyIG8y0tlqR/asJiq0gfm1W5wh93re+XESxhwpUoa5q3iZuokzvYqNIcgdB04t89/1O/w1cDnyilFU=';
 		$webhook = $this->webhookEventObject;
 		$userId = $webhook->{"events"}[0]->{"source"}->{"userId"}; 
 
 					
 		$url = 'https://api.line.me/v2/bot/profile/'.$userId;
-		$headers = array('Authorization: Bearer ' . $this->channelAccessToken);
+		$headers = array('Authorization: Bearer ' . $channelAccessToken);
 		$ch = curl_init($url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
