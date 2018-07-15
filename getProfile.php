@@ -19,7 +19,7 @@ $authen_api ="grant_type=authorization_code&code=$code;&redirect_uri=https://maj
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 		$result = curl_exec($ch);
 		curl_close($ch);
-		return $result;
+
 		//return $result['displayName'];		
 	
 
@@ -46,11 +46,11 @@ curl_close ($ch);*/
 
 echo "<br> <br> <br>";
 
-echo $result['displayName']." <br>";
+echo $result." <br>";
 
 echo "$code : Test <br> ";
-echo "$authen_login <br> ";
-echo "$authen_api <br> ";
+echo "$userId <br> ";
+//echo "$authen_api <br> ";
 
 //print_r($_GET);
 
