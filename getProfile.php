@@ -27,7 +27,6 @@ $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/oauth/verify");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, "data-urlencode access_token=5ZXZrSS8ZkEDGBilHGY2vKyWARc0Yx6O9zOZ/iN24MH39flQZLWt7gvvOY10/LMD3rppnVJBza1RyQIMXJ2vsoPh8i+L2nyIG8y0tlqR/asJiq0gfm1W5wh93re+XESxhwpUoa5q3iZuokzvYqNIcgdB04t89/1O/w1cDnyilFU=");
 curl_setopt($ch, CURLOPT_POST, 1);
 
 $headers = array();
