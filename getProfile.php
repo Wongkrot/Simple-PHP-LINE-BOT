@@ -20,8 +20,8 @@ if (curl_errno($ch)) {
     echo 'Error:' . curl_error($ch);
 }
 curl_close ($ch); 
-
-$acctoken = $result->{'access_token'};
+$result_obj = json_decode($result);
+$acctoken = $result_obj->{'access_token'};
 echo "Token :  $acctoken <br>";
 
 /*$ch = curl_init();
