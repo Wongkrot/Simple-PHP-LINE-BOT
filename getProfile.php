@@ -21,12 +21,12 @@ if (curl_errno($ch)) {
 }
 curl_close ($ch); 
 
-//$result_obj = json_decode($result);
-//$acctoken = $result_obj->{'access_token'};
+$result_obj = json_decode($result);
+$acctoken = $result_obj->{'access_token'};
 //echo "Token :  $acctoken <br>";
-echo "Hello Test";
+//echo "Hello Test";
 
-/*$ch = curl_init();
+$ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/profile");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
@@ -37,17 +37,17 @@ $result = curl_exec($ch);
 if (curl_errno($ch)) {
     echo 'Error:' . curl_error($ch);
 }
-curl_close ($ch);*/
+curl_close ($ch);
 
 //header('Location: http://www.d-sci.co.th/LineQ.html?profile='.$profile_obj->{'displayName'}); 
 
 //echo "$code : Test <br> ";
 
-//echo "$result <br> ";
+echo "$result <br> ";
 
 //echo "$authen_api <br> ";
 
-print_r($_GET);
+//print_r($_GET);
 
 
     
