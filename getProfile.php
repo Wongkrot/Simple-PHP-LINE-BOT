@@ -21,7 +21,7 @@ if (curl_errno($ch)) {
 }
 curl_close ($ch); 
 
-$result_obj = json_encode($result);
+$result_obj = json_decode($result);
 $acctoken = $result_obj->{'access_token'};
 echo "Token :  $acctoken <br>";
 
@@ -39,8 +39,6 @@ if (curl_errno($ch)) {
 curl_close ($ch);*/
 
 //header('Location: http://www.d-sci.co.th/LineQ.html?profile='.$profile_obj->{'displayName'}); 
-
-echo "<br> <br> <br>";
 
 echo "$code : Test <br> ";
 
