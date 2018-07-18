@@ -21,8 +21,8 @@ if (curl_errno($ch)) {
 }
 curl_close ($ch); 
 
-$result_obj = json_decode($result);
-$acctoken = $result_obj->{'access_token'};
+//$result_obj = json_decode($result);
+//$acctoken = $result_obj->{'access_token'};
 //echo "Token :  $acctoken <br>";
 echo "Hello Test";
 
