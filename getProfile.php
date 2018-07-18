@@ -49,7 +49,7 @@ header("Location: http://www.d-sci.co.th/LineQ.html?name=$displayname");
 
 //echo "$result <br> ";
 
-//echo "$authen_api <br> ";
+echo "$userid : $displayname <br> ";
 
 //print_r($_GET);
 
