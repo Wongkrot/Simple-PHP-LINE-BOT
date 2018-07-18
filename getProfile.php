@@ -53,7 +53,7 @@ echo "$code : Test <br> ";
 
 //echo "$authen_api <br> ";
 
-//print_r($_GET);
+print_r($_GET);
 
 
     
