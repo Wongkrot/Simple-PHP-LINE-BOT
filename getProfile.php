@@ -21,7 +21,9 @@ if (curl_errno($ch)) {
 }
 curl_close ($ch); 
 
-$token = $result->{'refresh_token'};
+$token = $result->{'access_token'};
+echo "$token <br>";
+
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/profile");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
