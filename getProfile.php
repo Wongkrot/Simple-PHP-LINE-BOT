@@ -23,7 +23,7 @@ if (curl_errno($ch)) {
 }
 curl_close ($ch); */
 
-        $ch = curl_init();
+        /*$ch = curl_init();
 
 	//curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/bot/profile/U7b0404c29adc3a97d6db31dff5987f8a");
 	curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/profile");
@@ -33,6 +33,25 @@ curl_close ($ch); */
 
 	$headers = array();
 	$headers[] = "Authorization: Bearer {5ZXZrSS8ZkEDGBilHGY2vKyWARc0Yx6O9zOZ/iN24MH39flQZLWt7gvvOY10/LMD3rppnVJBza1RyQIMXJ2vsoPh8i+L2nyIG8y0tlqR/asJiq0gfm1W5wh93re+XESxhwpUoa5q3iZuokzvYqNIcgdB04t89/1O/w1cDnyilFU=}";
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+	$result = curl_exec($ch);
+	if (curl_errno($ch)) {
+	    echo 'Error:' . curl_error($ch);
+	}
+	curl_close ($ch);*/
+
+	$ch = curl_init();
+
+	curl_setopt($ch, CURLOPT_URL, "https://api.line.me/oauth2/v2.1/revoke");
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, "client_id={1591950917}&client_secret={33a71e2a76f6b89b4b31e61f02d93f97
+}&access_token={5ZXZrSS8ZkEDGBilHGY2vKyWARc0Yx6O9zOZ/iN24MH39flQZLWt7gvvOY10/LMD3rppnVJBza1RyQIMXJ2vsoPh8i+L2nyIG8y0tlqR/asJiq0gfm1W5wh93re+XESxhwpUoa5q3iZuokzvYqNIcgdB04t89/1O/w1cDnyilFU=
+}");
+	curl_setopt($ch, CURLOPT_POST, 1);
+
+	$headers = array();
+	$headers[] = "Content-Type: application/x-www-form-urlencoded";
 	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 	$result = curl_exec($ch);
