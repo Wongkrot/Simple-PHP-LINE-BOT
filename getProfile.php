@@ -6,8 +6,6 @@ $api = "https://api.line.me/oauth2/v2.1/token";
 //$authen_login ="grant_type=authorization_code&code=$code;&redirect_uri=https://majestic-biscayne-65338.herokuapp.com/getProfile.php&client_id=1594277893&client_secret=d2a63d13dacf5041464d249127ebf50d";
 //$authen_api ="grant_type=authorization_code&code=$code;&redirect_uri=https://majestic-biscayne-65338.herokuapp.com/getProfile.php&client_id=1591950917&client_secret=33a71e2a76f6b89b4b31e61f02d93f97";
 
-$webhook = $this->webhookEventObject;
-$userid = $webhook->{"events"}[7]->{"source"}->{"userId"}; 
 
 /* $ch = curl_init();
 
@@ -48,13 +46,11 @@ curl_close ($ch); */
 
 echo "<br> <br> <br>";
 
-echo $userid." <br>";
-
 echo "$code : Test <br> ";
 
 //echo "$authen_api <br> ";
 
-//print_r($_GET);
+print_r($_GET);
 
 
     
