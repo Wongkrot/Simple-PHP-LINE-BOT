@@ -39,11 +39,15 @@ if (curl_errno($ch)) {
 }
 curl_close ($ch);
 
-//header('Location: http://www.d-sci.co.th/LineQ.html?profile='.$profile_obj->{'displayName'}); 
+$result_obj = json_decode($result);
+$userid = $result_obj->{'userId'};
+$displayname = $result_obj->{'displayName'};
+
+header("Location: http://www.d-sci.co.th/LineQ.html?name=$displayname"); 
 
 //echo "$code : Test <br> ";
 
-echo "$result <br> ";
+//echo "$result <br> ";
 
 //echo "$authen_api <br> ";
 
