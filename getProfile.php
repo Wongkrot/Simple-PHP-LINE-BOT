@@ -21,7 +21,7 @@ if (curl_errno($ch)) {
 }
 curl_close ($ch); 
 
-$token = $result['access_token'];
+$token = $result[0];
 echo "Token : $token <br>";
 
 /*$ch = curl_init();
