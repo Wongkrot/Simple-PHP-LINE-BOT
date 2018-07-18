@@ -26,18 +26,18 @@ $acctoken = $result_obj->{'access_token'};
 //echo "Token :  $acctoken <br>";
 //echo "Hello Test";
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/profile");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+$ch1 = curl_init();
+curl_setopt($ch1, CURLOPT_URL, "https://api.line.me/v2/profile");
+curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch1, CURLOPT_CUSTOMREQUEST, "GET");
 $headers = array();
 $headers[] = "Authorization: Bearer {$acctoken}";
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-$result = curl_exec($ch);
-if (curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
+curl_setopt($ch1, CURLOPT_HTTPHEADER, $headers);
+$result = curl_exec($ch1);
+if (curl_errno($ch1)) {
+    echo 'Error:' . curl_error($ch1);
 }
-curl_close ($ch);
+curl_close ($ch1);
 
 $result_obj = json_decode($result);
 $userid = $result_obj->{'userId'};
