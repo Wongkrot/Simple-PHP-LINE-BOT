@@ -45,7 +45,7 @@ $displayname = $result_obj->{'displayName'};
 
 //header("Location: http://www.d-sci.co.th/LineQ.html?name=$displayname"); 
 
-//echo "$code : Test <br> ";
+echo "<br> <br> <br> ";
 
 //echo "$result <br> ";
 
