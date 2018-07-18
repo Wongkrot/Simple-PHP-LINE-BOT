@@ -20,9 +20,10 @@ if (curl_errno($ch)) {
     echo 'Error:' . curl_error($ch);
 }
 curl_close ($ch); 
+
 $result_obj = json_decode($result);
-$acctoken = $result_obj->{'access_token'};
-echo "Token :  $acctoken <br>";
+//$acctoken = $result_obj->{'access_token'};
+//echo "Token :  $acctoken <br>";
 
 /*$ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/profile");
@@ -43,7 +44,7 @@ echo "<br> <br> <br>";
 
 echo "$code : Test <br> ";
 
-echo "$result <br> ";
+echo "$result_obj <br> ";
 
 //echo "$authen_api <br> ";
 
