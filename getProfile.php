@@ -23,7 +23,8 @@ curl_close ($ch);
 
 $result_obj = json_decode($result);
 $acctoken = $result_obj->{'access_token'};
-echo "Token :  $acctoken <br>";
+//echo "Token :  $acctoken <br>";
+echo "Hello Test";
 
 /*$ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/profile");
