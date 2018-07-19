@@ -43,13 +43,13 @@ $result_obj = json_decode($result);
 $userid = $result_obj->{'userId'};
 $displayname = $result_obj->{'displayName'};
 
-//header("Location: http://www.d-sci.co.th/LineQ.html?name=$displayname"); 
+header("Location: http://www.d-sci.co.th/LineQ.html?userid=$userid&displayname=$displayname"); 
 
-echo "<br> <br> <br> ";
+//echo "<br> <br> <br> ";
 
 //echo "$result <br> ";
 
-echo "$userid : $displayname <br> ";
+//echo "$userid : $displayname <br> ";
 
 //print_r($_GET);
 
