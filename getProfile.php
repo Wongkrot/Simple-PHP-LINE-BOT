@@ -43,7 +43,8 @@ $result_obj = json_decode($result);
 $userid = $result_obj->{'userId'};
 $displayname = $result_obj->{'displayName'};
 
-header("Location: http://www.d-sci.co.th/LineQ.html?userid=$userid&displayname=$displayname"); 
+//header("Location: http://www.d-sci.co.th/LineQ.html?userid=$userid&displayname=$displayname"); 
+header("Location: http://202.129.59.25/LineMasterQueue/index.aspx?userid=$userid&displayname=$displayname"); 
 
 //echo "<br> <br> <br> ";
 
